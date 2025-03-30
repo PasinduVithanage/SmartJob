@@ -52,7 +52,7 @@ export default function Navbar() {
       <div className="page-container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center space-x-2">
           <Briefcase className="h-8 w-8 text-primary" />
-          <span className="text-xl font-display font-medium">JobFinder</span>
+          <span className="text-xl font-display font-medium">SmartJob</span>
         </Link>
 
         {/* Desktop navigation */}
