@@ -108,6 +108,7 @@ export default function JobCard({ job, variant = 'default' }: JobCardProps) {
           <div className="flex items-center text-sm text-muted-foreground">
             <DollarSign className="h-4 w-4 mr-2" />
             <span>{job.salary}</span>
+            
           </div>
           <div className="flex items-center text-sm text-muted-foreground">
             <Building className="h-4 w-4 mr-2" />
@@ -115,7 +116,7 @@ export default function JobCard({ job, variant = 'default' }: JobCardProps) {
           </div>
           <div className="flex items-center text-sm text-muted-foreground">
             <Clock className="h-4 w-4 mr-2" />
-            <span>{daysAgo} days ago</span>
+            <span>{job.postedDate} </span>
           </div>
         </div>
 

@@ -16,6 +16,7 @@ export interface Job {
   category: string;
   experience: string;
   skills?: string[];
+  joburl: string;
 }
 
 export interface User {
@@ -212,139 +213,34 @@ export const useJobStore = create<JobState>()((set, get) => ({
     try {
       set({ isLoading: true });
       
-      // This would be an API call to Flask in a real app
-      // const response = await fetch(`${API_URL}/jobs`);
-      // if (!response.ok) throw new Error('Failed to fetch jobs');
-      // const data = await response.json();
+      // Read the LinkedIn jobs data from the JSON file
+      const response = await fetch('/data/linkedin_jobs.json');
+      if (!response.ok) throw new Error('Failed to fetch jobs');
+      const data = await response.json();
       
-      // Mock data for demonstration
-      const mockJobs: Job[] = [
-        {
-          id: '1',
-          title: 'Senior Frontend Developer',
-          company: 'TechCorp',
-          location: 'San Francisco, CA',
-          salary: '$120,000 - $150,000',
-          type: 'Full-time',
-          description: 'We are looking for a skilled frontend developer to join our team...',
-          requirements: ['5+ years of React experience', 'TypeScript knowledge', 'UI/UX skills'],
-          postedDate: '2023-05-15',
-          logo: 'https://placehold.co/100',
-          category: 'Development',
-          experience: 'Senior',
-          skills: ['React', 'TypeScript', 'CSS'],
-        },
-        {
-          id: '2',
-          title: 'UX Designer',
-          company: 'DesignStudio',
-          location: 'Remote',
-          salary: '$90,000 - $110,000',
-          type: 'Full-time',
-          description: 'Join our design team to create beautiful user experiences...',
-          requirements: ['3+ years of UX design', 'Figma proficiency', 'User research'],
-          postedDate: '2023-05-10',
-          logo: 'https://placehold.co/100',
-          category: 'Design',
-          experience: 'Mid-Level',
-          skills: ['Figma', 'Adobe XD', 'User Testing'],
-        },
-        {
-          id: '3',
-          title: 'Data Scientist',
-          company: 'DataWorks',
-          location: 'New York, NY',
-          salary: '$130,000 - $160,000',
-          type: 'Full-time',
-          description: 'Help us analyze complex data and create insights...',
-          requirements: ['Python', 'Machine Learning', 'Statistics', 'Data Visualization'],
-          postedDate: '2023-05-12',
-          logo: 'https://placehold.co/100',
-          category: 'Data Science',
-          experience: 'Senior',
-          skills: ['Python', 'TensorFlow', 'SQL'],
-        },
-        {
-          id: '4',
-          title: 'DevOps Engineer',
-          company: 'CloudScale',
-          location: 'Remote',
-          salary: '$110,000 - $140,000',
-          type: 'Full-time',
-          description: 'Help us build and maintain our cloud infrastructure...',
-          requirements: ['AWS', 'Kubernetes', 'CI/CD', 'Linux'],
-          postedDate: '2023-05-14',
-          logo: 'https://placehold.co/100',
-          category: 'DevOps',
-          experience: 'Mid-Level',
-          skills: ['AWS', 'Docker', 'Kubernetes'],
-        },
-        {
-          id: '5',
-          title: 'Product Manager',
-          company: 'ProductLabs',
-          location: 'Austin, TX',
-          salary: '$100,000 - $130,000',
-          type: 'Full-time',
-          description: 'Lead product development and strategy...',
-          requirements: ['3+ years in product management', 'Agile methodologies', 'Technical background'],
-          postedDate: '2023-05-08',
-          logo: 'https://placehold.co/100',
-          category: 'Management',
-          experience: 'Mid-Level',
-          skills: ['Agile', 'JIRA', 'User Stories'],
-        },
-        {
-          id: '6',
-          title: 'Mobile Developer',
-          company: 'AppFactory',
-          location: 'Seattle, WA',
-          salary: '$90,000 - $120,000',
-          type: 'Full-time',
-          description: 'Build native mobile applications for iOS and Android...',
-          requirements: ['React Native', 'Swift', 'Kotlin', 'Mobile UI design'],
-          postedDate: '2023-05-11',
-          logo: 'https://placehold.co/100',
-          category: 'Development',
-          experience: 'Mid-Level',
-          skills: ['React Native', 'Swift', 'Kotlin'],
-        },
-        {
-          id: '7',
-          title: 'Content Writer',
-          company: 'ContentCraft',
-          location: 'Remote',
-          salary: '$60,000 - $80,000',
-          type: 'Part-time',
-          description: 'Create engaging content for our blogs and social media...',
-          requirements: ['Strong writing skills', 'SEO knowledge', 'Content strategy'],
-          postedDate: '2023-05-16',
-          logo: 'https://placehold.co/100',
-          category: 'Marketing',
-          experience: 'Entry-Level',
-          skills: ['SEO', 'Content Writing', 'WordPress'],
-        },
-        {
-          id: '8',
-          title: 'Backend Engineer',
-          company: 'ServerStack',
-          location: 'Chicago, IL',
-          salary: '$100,000 - $130,000',
-          type: 'Full-time',
-          description: 'Design and build our backend services and APIs...',
-          requirements: ['Node.js', 'Python', 'Database design', 'API development'],
-          postedDate: '2023-05-09',
-          logo: 'https://placehold.co/100',
-          category: 'Development',
-          experience: 'Mid-Level',
-          skills: ['Node.js', 'Python', 'MongoDB'],
-        },
-      ];
+      // Transform LinkedIn data to match our Job interface
+      const transformedJobs: Job[] = data.jobs.map((job: any) => ({
+        id: job.listing_id.split(':').pop() || '',
+        title: job.title,
+        company: job.company,
+        location: job.location,
+        salary: 'Not disclosed', // LinkedIn data doesn't include salary
+        type: 'Full-time', // Default value as LinkedIn data doesn't specify
+        description: `Position at ${job.company}`,
+        requirements: [], // Can be populated if available in LinkedIn data
+        postedDate: job.posted_date,
+        joburl: job.job_url,
+        logo: 'https://placehold.co/100', // Default logo
+        category: 'Not specified', // Can be determined based on job title
+        experience: 'Not specified',
+        skills: [], // Can be extracted from job title/description
+       
+      }));
       
       set({ 
-        jobs: mockJobs, 
-        filteredJobs: mockJobs,
-        featuredJobs: mockJobs.slice(0, 4),
+        jobs: transformedJobs, 
+        filteredJobs: transformedJobs,
+        featuredJobs: transformedJobs.slice(0, 4),
         isLoading: false 
       });
     } catch (error) {

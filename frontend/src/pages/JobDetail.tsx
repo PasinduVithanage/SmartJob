@@ -281,7 +281,7 @@ export default function JobDetail() {
                 </div>
                 <div className="flex items-center text-sm">
                   <Clock className="h-5 w-5 mr-2 text-muted-foreground" />
-                  <span>Posted {daysAgo} days ago</span>
+                  <span>Posted {currentJob.postedDate} </span>
                 </div>
               </div>
               
@@ -295,7 +295,7 @@ export default function JobDetail() {
               </div>
               
               <div className="flex justify-center">
-                <button
+                {/* <button
                   onClick={handleApply}
                   disabled={hasApplied || isApplying}
                   className={`w-full sm:w-auto px-8 py-3 rounded-full font-medium transition-all ${
@@ -320,7 +320,16 @@ export default function JobDetail() {
                   ) : (
                     'Apply Now'
                   )}
-                </button>
+                </button> */}
+                <a
+                    href={currentJob.joburl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-8 py-3 rounded-full font-medium transition-all bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center"
+                  >
+                    <Send className="mr-2 h-5 w-5" />
+                    Apply on LinkedIn
+                  </a>
               </div>
             </motion.div>
             

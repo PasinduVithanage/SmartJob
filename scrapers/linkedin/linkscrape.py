@@ -1,109 +1,95 @@
-import sys
-import os
-import json
 import asyncio
-import random
+import json
+import os
 from datetime import datetime
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
+from playwright.async_api import async_playwright
 
-sys.stdout.reconfigure(encoding="utf-8")
-os.environ["PYTHONIOENCODING"] = "utf-8"
-
-MAX_PAGES = 3
-INITIAL_URL = "https://www.linkedin.com/jobs/search/?keywords=Software%20Engineer&location=United%20States"
+MAX_JOBS = 1000
+INITIAL_URL = "https://www.linkedin.com/jobs/search?keywords=&location=Sri%20Lanka&geoId=100446352&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0"
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "public", "data", "linkedin_jobs.json")
 
 async def scrape_linkedin_jobs():
     try:
-        # Configure browser
-        browser_config = BrowserConfig(
-            browser_type="chromium",
-            headless=False,
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        )
-
-        # Extraction schema
-        job_schema = {
-            "name": "LinkedIn Jobs",
-            "baseSelector": "div.base-card",
-            "fields": [
-                {"name": "title", "selector": "h3.base-search-card__title", "type": "text"},
-                {"name": "company", "selector": "h4.base-search-card__subtitle a", "type": "text"},
-                {"name": "location", "selector": "span.job-search-card__location", "type": "text"},
-                {"name": "posted_date", "selector": "time.job-search-card__listdate", "type": "text"},
-                {"name": "job_url", "selector": "a.base-card__full-link", "type": "attribute", "attribute": "href"},
-                {"name": "listing_id", "selector": "div.base-card", "type": "attribute", "attribute": "data-entity-urn"}
-            ]
-        }
-
         all_jobs = []
-        current_page = 0
+        seen_job_ids = set()
+        last_job_count = 0
+        stuck_count = 0
 
-        async with AsyncWebCrawler(config=browser_config) as crawler:
-            while current_page < MAX_PAGES:
-                print(f"\nScraping page {current_page + 1}")
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=False)
+            context = await browser.new_context(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                viewport={"width": 1200, "height": 2000},
+                # Consider adding cookies if you have a LinkedIn account
+                # storage_state="linkedin_cookies.json"
+            )
+            page = await context.new_page()
+
+            await page.goto(INITIAL_URL, timeout=60000)
+            await page.wait_for_selector("div.base-card", timeout=30000)
+
+            while len(all_jobs) < MAX_JOBS and stuck_count < 5:
+                print(f"\nProcessing... Total jobs collected: {len(all_jobs)}")
+
+                # Scroll in increments to trigger loading
+                for _ in range(3):
+                    await page.evaluate('window.scrollBy(0, 800)')
+                    await asyncio.sleep(0.3)  # Small delay between scrolls
+
+                # Wait for content to load
+                await asyncio.sleep(1.5)
+
+                # Extract jobs
+                jobs = await page.evaluate('''() => {
+                    const cards = Array.from(document.querySelectorAll('div.base-card'));
+                    return cards.map(job => ({
+                        title: job.querySelector('h3.base-search-card__title')?.innerText?.trim() || '',
+                        company: job.querySelector('h4.base-search-card__subtitle a')?.innerText?.trim() || '',
+                        location: job.querySelector('span.job-search-card__location')?.innerText?.trim() || '',
+                        posted_date: job.querySelector('time.job-search-card__listdate')?.innerText?.trim() || '',
+                        job_url: job.querySelector('a.base-card__full-link')?.href || '',
+                        listing_id: job.getAttribute('data-entity-urn') || ''
+                    })).filter(job => job.listing_id);
+                }''')
+
+                # Process new jobs
+                new_jobs = [job for job in jobs if job['listing_id'] not in seen_job_ids]
                 
-                try:
-                    # Configure crawler for each page
-                    crawler_config = CrawlerRunConfig(
-                        cache_mode=CacheMode.BYPASS,
-                        page_timeout=30000,
-                        wait_until="domcontentloaded",
-                        extraction_strategy=JsonCssExtractionStrategy(
-                            verbose=False,
-                            schema=job_schema
-                        )
-                    )
+                if new_jobs:
+                    all_jobs.extend(new_jobs)
+                    seen_job_ids.update(job['listing_id'] for job in new_jobs)
+                    print(f"Added {len(new_jobs)} new jobs")
+                    stuck_count = 0  # Reset stuck counter
+                else:
+                    stuck_count += 1
+                    print(f"No new jobs found (attempt {stuck_count}/5)")
 
-                    # Get results
-                    result = await crawler.arun(
-                        url=f"{INITIAL_URL}&start={current_page * 25}",
-                        config=crawler_config
-                    )
+                    # Try alternative methods to load more jobs
+                    try:
+                        # Click "See more jobs" button if visible
+                        await page.click('button.infinite-scroller__show-more-button', timeout=2000)
+                        print("Clicked 'See more jobs' button")
+                        await asyncio.sleep(2)
+                    except:
+                        # Scroll to very bottom as last resort
+                        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+                        await asyncio.sleep(2)
 
-                    # Debugging output
-                    print("\nResult object properties:", dir(result))
-                    if hasattr(result, 'extracted_content'):
-                        print(f"Extracted content length: {len(result.extracted_content)}")
-                    
-                    # Process results
-                    if result and result.extracted_content:
-                        try:
-                            jobs = json.loads(result.extracted_content)
-                            if jobs:
-                                all_jobs.extend(jobs)
-                                print(f"Added {len(jobs)} jobs (Total: {len(all_jobs)})")
-                            else:
-                                print("No jobs found in extracted content")
-                        except Exception as e:
-                            print(f"JSON parsing error: {str(e)}")
-                    else:
-                        print("No content extracted")
-
-                except Exception as e:
-                    print(f"Page {current_page + 1} failed: {str(e)}")
-
-                current_page += 1
-                await asyncio.sleep(random.uniform(2, 5))
-
-        # Save results
-        if all_jobs:
-            filename = f"linkedin_jobs_{datetime.now().strftime('%Y%m%d_%H%M')}.json"
-            with open(filename, "w", encoding="utf-8") as f:
+            # Save all jobs to single file
+            os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+            with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
                 json.dump({
                     "meta": {
                         "total_jobs": len(all_jobs),
-                        "pages_scraped": current_page,
-                        "timestamp": datetime.now().isoformat()
+                        "timestamp": datetime.now().isoformat(),
+                        "url": INITIAL_URL
                     },
                     "jobs": all_jobs
                 }, f, ensure_ascii=False, indent=2)
-            
-            print(f"\nSuccessfully saved {len(all_jobs)} jobs to {filename}")
-            return True
 
-        return False
+            print(f"\nFinished! Saved {len(all_jobs)} jobs to {OUTPUT_FILE}")
+            await browser.close()
+            return True
 
     except Exception as e:
         print(f"Fatal error: {str(e)}")
