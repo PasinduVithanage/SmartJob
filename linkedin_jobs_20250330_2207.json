@@ -1,0 +1,1269 @@
+{
+  "meta": {
+    "total_jobs": 180,
+    "pages_scraped": 3,
+    "timestamp": "2025-03-30T22:07:10.601356"
+  },
+  "jobs": [
+    {
+      "title": "Software Engineer I",
+      "company": "Nike",
+      "location": "Beaverton, OR",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-i-at-nike-4196643132?position=1&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=jgBBod5z5QwIV7leRvw8Bg%3D%3D"
+    },
+    {
+      "title": "Software Engineer, AI Platform - New Grad",
+      "company": "Nuro",
+      "location": "Mountain View, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-ai-platform-new-grad-at-nuro-4191146990?position=2&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=7OVGEZZbQt4nxEik8d0m4w%3D%3D"
+    },
+    {
+      "title": "ML Software Engineer (L4/L5) - Media Algorithms",
+      "company": "Netflix",
+      "location": "Los Angeles, CA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/ml-software-engineer-l4-l5-media-algorithms-at-netflix-4190175859?position=3&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=ZjW6bRfUAd1stE4r1MSyyQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Flip",
+      "location": "New York, NY",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-flip-4194076304?position=4&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=3Qa6B14%2FQZKndeftU1HC3A%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Full Stack)",
+      "company": "Verse",
+      "location": "New York, United States",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-verse-4190008536?position=5&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=r2a0Y7hZiDWk5IY9%2FeEPgw%3D%3D"
+    },
+    {
+      "title": "Software Engineer (New Grad Program)",
+      "company": "Sigma",
+      "location": "New York, NY",
+      "posted_date": "6 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-program-at-sigma-4192202080?position=6&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=uURKO5QYORDxgb2Ub79Ptw%3D%3D"
+    },
+    {
+      "title": "Software Engineer / Early Career-Level",
+      "company": "Lockheed Martin",
+      "location": "Hurlburt Field, FL",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-level-at-lockheed-martin-4187551176?position=7&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=%2BJgMIrlxeDGOAAZVYAeo2w%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Lyft",
+      "location": "San Francisco County, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-lyft-4189258583?position=8&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=XeF%2BKGj3IOHgbslQFxK6UA%3D%3D"
+    },
+    {
+      "title": "New Grad Software Engineer",
+      "company": "Vapi",
+      "location": "San Francisco, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/new-grad-software-engineer-at-vapi-4177411509?position=9&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=qISlELGVi4L0j%2B3dxybTlw%3D%3D"
+    },
+    {
+      "title": "Full-Stack Software Engineer (New graduates: United States)",
+      "company": "Wanderlog",
+      "location": "United States",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-new-graduates-united-states-at-wanderlog-4190933122?position=10&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=BuIlSrCNtpZI1lTXjokAkQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "PayPal",
+      "location": "San Jose, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-paypal-4190815446?position=11&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=tsTAVmYdzKqbJyEWDNlxtQ%3D%3D"
+    },
+    {
+      "title": "Intern, Software Engineer",
+      "company": "Ticketmaster",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/intern-software-engineer-at-ticketmaster-4191513835?position=12&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=%2Bt0spxHWMvKGzuABOkO7XA%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Lyft",
+      "location": "Seattle, WA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-lyft-4189260443?position=13&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=zVEflRhe6agleRhX3tCY1A%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Zocdoc",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-zocdoc-4191815211?position=14&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=LAU8jDJgavgCP2Ad%2FKz2kw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Trust",
+      "company": "Notion",
+      "location": "New York, NY",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-trust-at-notion-4179143099?position=15&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=XJRbec7mZbOPuKnMT%2FZ0WQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Internship (Summer 2025)",
+      "company": "Nominal",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-summer-2025-at-nominal-4182767499?position=16&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=%2FbLj2RQgFg4F0atIcaV%2BOQ%3D%3D"
+    },
+    {
+      "title": "Full Stack Software Engineer",
+      "company": "Calm",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-calm-4187612012?position=17&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=u7%2F4dnPEJkU7w8nkMOCf%2BQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Internship (Summer 2025)",
+      "company": "Nominal",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-summer-2025-at-nominal-4182765885?position=18&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=PD8dqfHVQi68vKBHokvTyw%3D%3D"
+    },
+    {
+      "title": "Software Engineer - New Grad",
+      "company": "Scale AI",
+      "location": "San Francisco Bay Area",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-scale-ai-4196120817?position=19&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=D3Dnp59dsCenUNNLN2QF4g%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Trust",
+      "company": "Notion",
+      "location": "San Francisco, CA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-trust-at-notion-4179136769?position=20&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=jdwECv4Km4NDYQtjzv%2F10Q%3D%3D"
+    },
+    {
+      "title": "Software Engineer, New College Grad - 2025",
+      "company": "Visa",
+      "location": "Foster City, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-college-grad-2025-at-visa-4183554187?position=21&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=DjvZJO%2F69LBHlmgfcZhI3w%3D%3D"
+    },
+    {
+      "title": "2025 Intern - Software Development Engineer",
+      "company": "Adobe",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/2025-intern-software-development-engineer-at-adobe-4184507790?position=22&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=UWTljmLQIvD%2Bs5uW48eKXQ%3D%3D"
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "GigaML",
+      "location": "San Francisco, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-gigaml-4191199369?position=23&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=EvQxH1EEkw69v3efACBc%2Fg%3D%3D"
+    },
+    {
+      "title": "Software Development Engineer 1",
+      "company": "Adobe",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-development-engineer-1-at-adobe-4186489771?position=24&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=FYZ7hm465inbV2E1TslGFw%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Frontend) - Early in Career",
+      "company": "Splunk",
+      "location": "Colorado, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-early-in-career-at-splunk-4177397229?position=25&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=NL%2BrilrT5T5DxL%2Fa9kF4zA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Integrations",
+      "company": "Notion",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-integrations-at-notion-4194463239?position=26&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=hJToFqxNlsUwdjv01aph3w%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Full-Stack)",
+      "company": "Ascertain",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-ascertain-4182984914?position=27&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=EfDiZwnF3X15k3NWySNPmw%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "CLEAR",
+      "location": "Austin, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-clear-4181633460?position=28&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=fsmO1DhMEeXcWgUe6h6MpQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer (L5), Ads Measurement",
+      "company": "Netflix",
+      "location": "New York, United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-l5-ads-measurement-at-netflix-4178703393?position=29&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=M8s%2BTSLh5fQteC2PBPf41Q%3D%3D"
+    },
+    {
+      "title": "Full Stack Software Engineer 4 - Game Lifecycle Engineering",
+      "company": "Netflix",
+      "location": "United States",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-4-game-lifecycle-engineering-at-netflix-4190181205?position=30&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=bETKW8jcDC6UXoMoDRQIRg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Frontend) - Early in Career",
+      "company": "Splunk",
+      "location": "North Carolina, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-early-in-career-at-splunk-4177390911?position=31&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=QLWvvl9Tn9jrWz8Iy804FQ%3D%3D"
+    },
+    {
+      "title": "eCommerce Software Engineer - JavaScript (front OR back-end)",
+      "company": "Nike",
+      "location": "Atlanta, GA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/ecommerce-software-engineer-javascript-front-or-back-end-at-nike-4196107610?position=32&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=FVCA450cPyYLbv7fOP3ufw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Intern",
+      "company": "Sauron",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-sauron-4187522470?position=33&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=i%2FWBmMobZb2UYIkUdAbGFw%3D%3D"
+    },
+    {
+      "title": "Web Front-End Developer",
+      "company": "Lenovo",
+      "location": "Morrisville, NC",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/web-front-end-developer-at-lenovo-4177153274?position=34&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=ipZFT6qYA51ljrV97GaESQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern",
+      "company": "SHEIN Technology LLC",
+      "location": "Bellevue, WA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-shein-technology-llc-4189077653?position=35&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=jORe3RYEzQrEgN%2BbCrKVRQ%3D%3D"
+    },
+    {
+      "title": "Front End Software Engineer",
+      "company": "Ollie",
+      "location": "United States",
+      "posted_date": "3 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-at-ollie-4177383455?position=36&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=NTiX%2BxKRI6hHsr7Ucmg7%2Bw%3D%3D"
+    },
+    {
+      "title": "Software Engineer ( Fullstack) -",
+      "company": "Rakuten Rewards",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-rakuten-rewards-4182357401?position=37&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=TpV%2FRiNisvNXJog90CJloQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Summer Internship",
+      "company": "Lazarus AI",
+      "location": "Boston, MA",
+      "posted_date": "3 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-summer-internship-at-lazarus-ai-4179521486?position=38&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=TF2pFvZKgHqH0bXU3fprnQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Brigit",
+      "location": "New York, NY",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-brigit-4192884089?position=39&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=oLBqf7x4q9E6%2B8Uh3uNUdQ%3D%3D"
+    },
+    {
+      "title": "Front-End Software Engineer",
+      "company": "Candid",
+      "location": "New York, NY",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-at-candid-4192631066?position=40&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=Tr1acMH3tkQcOzKga6yA2w%3D%3D"
+    },
+    {
+      "title": "Internship - Software Engineer",
+      "company": "North Texas Tollway Authority",
+      "location": "Plano, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/internship-software-engineer-at-north-texas-tollway-authority-4187658921?position=41&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=pGs%2FpMkdCdwyxnWYsYeCBw%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern, Connect",
+      "company": "Posit PBC",
+      "location": "United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-connect-at-posit-pbc-4182143645?position=42&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=hmgHLgInmZXxO5vjTH9RGw%3D%3D"
+    },
+    {
+      "title": "Software Engineer Internship",
+      "company": "Rad AI",
+      "location": "United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-at-rad-ai-4180952900?position=43&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=jTHM2%2F84As%2FDgABxcESBmA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "CLEAR",
+      "location": "Austin, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-clear-4184676307?position=44&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=ULhzqoL6ngEZaFFqi4g6Vg%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern, Summer 2025",
+      "company": "Centerfield",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-summer-2025-at-centerfield-4177414792?position=45&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=NjzvH0RionErI2jO2w93Fw%3D%3D"
+    },
+    {
+      "title": "Junior Software Development Engineer",
+      "company": "Nexio",
+      "location": "Orem, UT",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-development-engineer-at-nexio-4185661815?position=46&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=YaKJJA5t8v5FSmc8yu7vmA%3D%3D"
+    },
+    {
+      "title": "Software Engineer Internship (12 months)",
+      "company": "Clerkie",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-12-months-at-clerkie-4184721472?position=47&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=QgC%2Ft6E5UlC%2BIcF0jpHu%2FA%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Backend/Fullstack) - Early in Career",
+      "company": "Splunk",
+      "location": "Colorado, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-fullstack-early-in-career-at-splunk-4177391894?position=48&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=iMPUg%2Bf1dWxim%2B%2BHsUlcGg%3D%3D"
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "Everblue",
+      "location": "Davidson, NC",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-everblue-4191846884?position=49&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=B%2BpyvwxvgfXMQf4R84E7tA%3D%3D"
+    },
+    {
+      "title": "Software Engineer ( Fullstack) -",
+      "company": "Rakuten Rewards",
+      "location": "San Francisco, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-rakuten-rewards-4193615682?position=50&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=TKYoczzn9WHHjICX40H9Og%3D%3D"
+    },
+    {
+      "title": "Associate Software Engineer",
+      "company": "Focus AI",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/associate-software-engineer-at-focus-ai-4190713186?position=51&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=UHN3IHFKzDvAEWsBgZIknA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Ikigai",
+      "location": "Cambridge, MA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-ikigai-4192423780?position=52&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=03rcBcQYF67Fi%2Fg8iYKuoQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Snowflake",
+      "location": "Menlo Park, CA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-snowflake-4192503331?position=53&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=2wijAWAq%2F2OUAOKs5s8Zvw%3D%3D"
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4187085890?position=54&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=dNm3CzQ67Ko26WjoUAILUg%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Venchr",
+      "location": "San Francisco Bay Area",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-venchr-4176937791?position=55&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=0Z89IzMjIORvT1oV9IU29g%3D%3D"
+    },
+    {
+      "title": "Nuuly Web Software Engineer",
+      "company": "Nuuly",
+      "location": "Philadelphia, PA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/nuuly-web-software-engineer-at-nuuly-4181221888?position=56&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=LOmb5BWGFFjDYqPBPwEH%2BA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Early Stage Project",
+      "company": "X, The Moonshot Factory",
+      "location": "Mountain View, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-stage-project-at-x-the-moonshot-factory-4180095903?position=57&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=%2FKMHFYxgofxxB%2FoWpTBeiA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Chrome Desktop",
+      "company": "Google",
+      "location": "Seattle, WA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-chrome-desktop-at-google-4189397260?position=58&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=SwmUr1Mux2mwA2KuAhyKQQ%3D%3D"
+    },
+    {
+      "title": "2025 Intern - Software Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/2025-intern-software-engineer-at-adobe-4184721335?position=59&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=2ju8iV8D0NMvL7gj7LAjMg%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Deep Sky",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-deep-sky-4185055200?position=60&pageNum=0&refId=PQtl76UUFcnWTL%2FrDwp9PQ%3D%3D&trackingId=HI5AbZIUgEBz4byZ2043%2Fg%3D%3D"
+    },
+    {
+      "title": "Software Engineer I",
+      "company": "Nike",
+      "location": "Beaverton, OR",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-i-at-nike-4196643132?position=1&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=g6QkShPoVqExVFuHQHWuwA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, AI Platform - New Grad",
+      "company": "Nuro",
+      "location": "Mountain View, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-ai-platform-new-grad-at-nuro-4191146990?position=2&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=Nd4%2BOUGfAH%2B6ONOK8XdKUg%3D%3D"
+    },
+    {
+      "title": "ML Software Engineer (L4/L5) - Media Algorithms",
+      "company": "Netflix",
+      "location": "Los Angeles, CA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/ml-software-engineer-l4-l5-media-algorithms-at-netflix-4190175859?position=3&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=uLK6akKhvBFGBVD6bnpabA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Flip",
+      "location": "New York, NY",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-flip-4194076304?position=4&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=CzXEFj%2FiTkoZgvRIdpBuPA%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Full Stack)",
+      "company": "Verse",
+      "location": "New York, United States",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-verse-4190008536?position=5&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=BUoEED5wbPanhb1d9sftaw%3D%3D"
+    },
+    {
+      "title": "Software Engineer (New Grad Program)",
+      "company": "Sigma",
+      "location": "New York, NY",
+      "posted_date": "6 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-program-at-sigma-4192202080?position=6&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=WhkH02s7Tvgb%2B2MEJ7l98g%3D%3D"
+    },
+    {
+      "title": "Software Engineer / Early Career-Level",
+      "company": "Lockheed Martin",
+      "location": "Hurlburt Field, FL",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-level-at-lockheed-martin-4187551176?position=7&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=Em%2FU8yU5DQ%2FAqXge787vvQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Lyft",
+      "location": "San Francisco County, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-lyft-4189258583?position=8&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=9T2%2Bp3CH2A5JJsKx2Rao5Q%3D%3D"
+    },
+    {
+      "title": "New Grad Software Engineer",
+      "company": "Vapi",
+      "location": "San Francisco, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/new-grad-software-engineer-at-vapi-4177411509?position=9&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=QSANKPBtoAXrf8HFWYWVYg%3D%3D"
+    },
+    {
+      "title": "Full-Stack Software Engineer (New graduates: United States)",
+      "company": "Wanderlog",
+      "location": "United States",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-new-graduates-united-states-at-wanderlog-4190933122?position=10&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=x%2BPX%2FgJqk7K7OyOJ6PB2Og%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "PayPal",
+      "location": "San Jose, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-paypal-4190815446?position=11&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=WY0e4ZDwwPYFG56%2BNNTi%2Bg%3D%3D"
+    },
+    {
+      "title": "Intern, Software Engineer",
+      "company": "Ticketmaster",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/intern-software-engineer-at-ticketmaster-4191513835?position=12&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=cMDH4RHD3VT1uTMyXGw3Yg%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Lyft",
+      "location": "Seattle, WA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-lyft-4189260443?position=13&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=uaEkjHQGJWRVZCy9QTcvfA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Zocdoc",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-zocdoc-4191815211?position=14&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=wALYWZAHpauWRtAqg9qw5g%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Trust",
+      "company": "Notion",
+      "location": "New York, NY",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-trust-at-notion-4179143099?position=15&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=CrtOX%2BG2mAQ3B%2FeM1xOAhQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Internship (Summer 2025)",
+      "company": "Nominal",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-summer-2025-at-nominal-4182767499?position=16&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=uWBXgzjodW%2BonNKSga%2BoRQ%3D%3D"
+    },
+    {
+      "title": "Full Stack Software Engineer",
+      "company": "Calm",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-calm-4187612012?position=17&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=qFIPuJFpzw%2BQyLdneXy1Vg%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Internship (Summer 2025)",
+      "company": "Nominal",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-summer-2025-at-nominal-4182765885?position=18&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=rg3%2F47Zjc8KSJLFzlrVeHw%3D%3D"
+    },
+    {
+      "title": "Software Engineer - New Grad",
+      "company": "Scale AI",
+      "location": "San Francisco Bay Area",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-scale-ai-4196120817?position=19&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=F4riYZNTMnIKWFmWVK%2FK8A%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Trust",
+      "company": "Notion",
+      "location": "San Francisco, CA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-trust-at-notion-4179136769?position=20&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ku5KBcE4JwxA6oOu8dcszA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, New College Grad - 2025",
+      "company": "Visa",
+      "location": "Foster City, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-college-grad-2025-at-visa-4183554187?position=21&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=tTfgdQTEI0DKuH5DwwCaQg%3D%3D"
+    },
+    {
+      "title": "2025 Intern - Software Development Engineer",
+      "company": "Adobe",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/2025-intern-software-development-engineer-at-adobe-4184507790?position=22&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=SUi2gd8hmE6HGDq0fgt5Pw%3D%3D"
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "GigaML",
+      "location": "San Francisco, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-gigaml-4191199369?position=23&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=Me6TEkJjFtStPDHc6PoGdQ%3D%3D"
+    },
+    {
+      "title": "Software Development Engineer 1",
+      "company": "Adobe",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-development-engineer-1-at-adobe-4186489771?position=24&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=hmbky3vfkAgaX6p4V8SZGg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Frontend) - Early in Career",
+      "company": "Splunk",
+      "location": "Colorado, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-early-in-career-at-splunk-4177397229?position=25&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=m0wl3d%2FluwyGLTdRoGwIoQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Integrations",
+      "company": "Notion",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-integrations-at-notion-4194463239?position=26&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=IRe%2BDGigUnUY2mQ%2FNDrPVg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Full-Stack)",
+      "company": "Ascertain",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-ascertain-4182984914?position=27&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ftOpl4zwGqg2eIEDRdHtWA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "CLEAR",
+      "location": "Austin, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-clear-4181633460?position=28&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=HhnybGEtl2F1WeMLG2WJeg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (L5), Ads Measurement",
+      "company": "Netflix",
+      "location": "New York, United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-l5-ads-measurement-at-netflix-4178703393?position=29&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=h%2F61Jp61ZK1pWpWkacFeyg%3D%3D"
+    },
+    {
+      "title": "Full Stack Software Engineer 4 - Game Lifecycle Engineering",
+      "company": "Netflix",
+      "location": "United States",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-4-game-lifecycle-engineering-at-netflix-4190181205?position=30&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=TKlbLvpuqG4yH7QfVgBKKQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Frontend) - Early in Career",
+      "company": "Splunk",
+      "location": "North Carolina, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-early-in-career-at-splunk-4177390911?position=31&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ZkUcTxYwXB6sPTIaUItztg%3D%3D"
+    },
+    {
+      "title": "eCommerce Software Engineer - JavaScript (front OR back-end)",
+      "company": "Nike",
+      "location": "Atlanta, GA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/ecommerce-software-engineer-javascript-front-or-back-end-at-nike-4196107610?position=32&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=xtDIThPZI3vr8BArERHkAw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Intern",
+      "company": "Sauron",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-sauron-4187522470?position=33&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=o8MqnqDFXzJOldMHxhu6tw%3D%3D"
+    },
+    {
+      "title": "Web Front-End Developer",
+      "company": "Lenovo",
+      "location": "Morrisville, NC",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/web-front-end-developer-at-lenovo-4177153274?position=34&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=KQ8MKYgZEJiHllJGgAW28g%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern",
+      "company": "SHEIN Technology LLC",
+      "location": "Bellevue, WA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-shein-technology-llc-4189077653?position=35&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=lsZzV7PnlAV9v3mZ27fdbg%3D%3D"
+    },
+    {
+      "title": "Front End Software Engineer",
+      "company": "Ollie",
+      "location": "United States",
+      "posted_date": "3 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-at-ollie-4177383455?position=36&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=aZGU2DjaDi6rgyB7%2F3opcQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer ( Fullstack) -",
+      "company": "Rakuten Rewards",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-rakuten-rewards-4182357401?position=37&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=H8TA6ddkQDu190E3BETHIA%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Summer Internship",
+      "company": "Lazarus AI",
+      "location": "Boston, MA",
+      "posted_date": "3 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-summer-internship-at-lazarus-ai-4179521486?position=38&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=Xs2e9BExvBvixaWrVuSYvA%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Brigit",
+      "location": "New York, NY",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-brigit-4192884089?position=39&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=zl2%2FqXHJ7wJmjx1jWzsfCQ%3D%3D"
+    },
+    {
+      "title": "Front-End Software Engineer",
+      "company": "Candid",
+      "location": "New York, NY",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-at-candid-4192631066?position=40&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=D85yQiOAwrbjEQubcUKNYw%3D%3D"
+    },
+    {
+      "title": "Internship - Software Engineer",
+      "company": "North Texas Tollway Authority",
+      "location": "Plano, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/internship-software-engineer-at-north-texas-tollway-authority-4187658921?position=41&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ru8jwXKTgRs86p25MdDx8Q%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern, Connect",
+      "company": "Posit PBC",
+      "location": "United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-connect-at-posit-pbc-4182143645?position=42&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=jCohE5oS%2Fzhfdgif7vyPGQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer Internship",
+      "company": "Rad AI",
+      "location": "United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-at-rad-ai-4180952900?position=43&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=h9hYyRVmzg5UQymSyUJV1w%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "CLEAR",
+      "location": "Austin, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-clear-4184676307?position=44&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=N9s4JhjDXHbPIQJivFiV1g%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern, Summer 2025",
+      "company": "Centerfield",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-summer-2025-at-centerfield-4177414792?position=45&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=dFX1Do%2BbL2psFLBDchEiSg%3D%3D"
+    },
+    {
+      "title": "Junior Software Development Engineer",
+      "company": "Nexio",
+      "location": "Orem, UT",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-development-engineer-at-nexio-4185661815?position=46&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=boelNM0Oc9Fe9bFsFKbErw%3D%3D"
+    },
+    {
+      "title": "Software Engineer Internship (12 months)",
+      "company": "Clerkie",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-12-months-at-clerkie-4184721472?position=47&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=o0bmL3dgAjYj9pqzArgatg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Backend/Fullstack) - Early in Career",
+      "company": "Splunk",
+      "location": "Colorado, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-fullstack-early-in-career-at-splunk-4177391894?position=48&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ixgH%2BVAj4a8gLe3YE6sD1w%3D%3D"
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "Everblue",
+      "location": "Davidson, NC",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-everblue-4191846884?position=49&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=H8pKvygAU2J6MrC8Y%2BwHmA%3D%3D"
+    },
+    {
+      "title": "Software Engineer ( Fullstack) -",
+      "company": "Rakuten Rewards",
+      "location": "San Francisco, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-rakuten-rewards-4193615682?position=50&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=t1I2%2BhXvR67u1ATMTqS1tA%3D%3D"
+    },
+    {
+      "title": "Associate Software Engineer",
+      "company": "Focus AI",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/associate-software-engineer-at-focus-ai-4190713186?position=51&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=u8qemjy1jSJS%2FKBaLIqEUw%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Ikigai",
+      "location": "Cambridge, MA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-ikigai-4192423780?position=52&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=vA7CWFDy%2F6kuggfcFewqjA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Snowflake",
+      "location": "Menlo Park, CA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-snowflake-4192503331?position=53&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=o%2B%2BSWD1mzv5ag5SIvdJAnA%3D%3D"
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4187085890?position=54&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=63R9aVXhOj8FEYwgvc6sMQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Venchr",
+      "location": "San Francisco Bay Area",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-venchr-4176937791?position=55&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=KQObO8teWrAh5I4GDlOE9w%3D%3D"
+    },
+    {
+      "title": "Nuuly Web Software Engineer",
+      "company": "Nuuly",
+      "location": "Philadelphia, PA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/nuuly-web-software-engineer-at-nuuly-4181221888?position=56&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ZoHzf1vSVFU68ougGS%2FOlg%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Early Stage Project",
+      "company": "X, The Moonshot Factory",
+      "location": "Mountain View, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-stage-project-at-x-the-moonshot-factory-4180095903?position=57&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=r4JyQD%2F4yEDc1pwY7BzZAQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Chrome Desktop",
+      "company": "Google",
+      "location": "Seattle, WA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-chrome-desktop-at-google-4189397260?position=58&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=0mnWO2CmRMZW%2BlByuyrt7A%3D%3D"
+    },
+    {
+      "title": "2025 Intern - Software Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/2025-intern-software-engineer-at-adobe-4184721335?position=59&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=n21ysUbcVGIYCJLwg53Tsw%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Deep Sky",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-deep-sky-4185055200?position=60&pageNum=0&refId=yo%2BwHIX2%2FC1aLIQqSd6GAQ%3D%3D&trackingId=ZrkJ9fQewI4wL2MNsObOzg%3D%3D"
+    },
+    {
+      "title": "Software Engineer I",
+      "company": "Nike",
+      "location": "Beaverton, OR",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-i-at-nike-4196643132?position=1&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=UO2rzuQld3Rt6WtXGY%2Fe2w%3D%3D"
+    },
+    {
+      "title": "Software Engineer, AI Platform - New Grad",
+      "company": "Nuro",
+      "location": "Mountain View, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-ai-platform-new-grad-at-nuro-4191146990?position=2&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=BATP4z6ykblaQvNvLQUgWg%3D%3D"
+    },
+    {
+      "title": "ML Software Engineer (L4/L5) - Media Algorithms",
+      "company": "Netflix",
+      "location": "Los Angeles, CA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/ml-software-engineer-l4-l5-media-algorithms-at-netflix-4190175859?position=3&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=A14AgNyEzYp%2F34nB%2BQNsbA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Flip",
+      "location": "New York, NY",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-flip-4194076304?position=4&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=sYfH%2Bp%2FBf3p4%2FxQHEh6PLw%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Full Stack)",
+      "company": "Verse",
+      "location": "New York, United States",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-verse-4190008536?position=5&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=zjC25ki5gHdly6izQj3ouQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer (New Grad Program)",
+      "company": "Sigma",
+      "location": "New York, NY",
+      "posted_date": "6 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-program-at-sigma-4192202080?position=6&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=71QsLHnDhH3xwYlxOPWiYA%3D%3D"
+    },
+    {
+      "title": "Software Engineer / Early Career-Level",
+      "company": "Lockheed Martin",
+      "location": "Hurlburt Field, FL",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-level-at-lockheed-martin-4187551176?position=7&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=EBQ8eh5vgQH6xXlcluOnHA%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Lyft",
+      "location": "San Francisco County, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-lyft-4189258583?position=8&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=aSHRDZKCgcFgtHKW3g4ILQ%3D%3D"
+    },
+    {
+      "title": "New Grad Software Engineer",
+      "company": "Vapi",
+      "location": "San Francisco, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/new-grad-software-engineer-at-vapi-4177411509?position=9&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=6OuS7IWMuL7v%2BQp%2FXym2vg%3D%3D"
+    },
+    {
+      "title": "Full-Stack Software Engineer (New graduates: United States)",
+      "company": "Wanderlog",
+      "location": "United States",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-new-graduates-united-states-at-wanderlog-4190933122?position=10&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=wko6D80te%2BSkhKapP0Vpsw%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "PayPal",
+      "location": "San Jose, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-paypal-4190815446?position=11&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=kEF36nh%2FTwj%2BMa70Jv3RLQ%3D%3D"
+    },
+    {
+      "title": "Intern, Software Engineer",
+      "company": "Ticketmaster",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/intern-software-engineer-at-ticketmaster-4191513835?position=12&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=FcGL3rSfg3yNAXEmEEX5DA%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Lyft",
+      "location": "Seattle, WA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-lyft-4189260443?position=13&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=bicuJyvDOJp4040%2FjeF5xw%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Zocdoc",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-zocdoc-4191815211?position=14&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=xuaWNx9XpnkVJxGjh4Gu1w%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Trust",
+      "company": "Notion",
+      "location": "New York, NY",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-trust-at-notion-4179143099?position=15&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=4VNvOBjucNQHy8KV7hf1oA%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Internship (Summer 2025)",
+      "company": "Nominal",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-summer-2025-at-nominal-4182767499?position=16&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=WuXG5VYwmfUuW%2BCa%2B5KnLA%3D%3D"
+    },
+    {
+      "title": "Full Stack Software Engineer",
+      "company": "Calm",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-calm-4187612012?position=17&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=LeEzzxnbCUavR8e7gMXoyg%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Internship (Summer 2025)",
+      "company": "Nominal",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-summer-2025-at-nominal-4182765885?position=18&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=0503ZhrTY2pB48ErAdDimg%3D%3D"
+    },
+    {
+      "title": "Software Engineer - New Grad",
+      "company": "Scale AI",
+      "location": "San Francisco Bay Area",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-scale-ai-4196120817?position=19&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=kWpe93HfChCFm9BI85Ub%2FQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Trust",
+      "company": "Notion",
+      "location": "San Francisco, CA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-trust-at-notion-4179136769?position=20&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=6U21MNlpl77M7vjI1Yw9sw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, New College Grad - 2025",
+      "company": "Visa",
+      "location": "Foster City, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-college-grad-2025-at-visa-4183554187?position=21&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=3ZqWfLqv3VNvKsROMcUeWQ%3D%3D"
+    },
+    {
+      "title": "2025 Intern - Software Development Engineer",
+      "company": "Adobe",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/2025-intern-software-development-engineer-at-adobe-4184507790?position=22&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=Gl2Wsn%2BLm5sZgzLnyekwEQ%3D%3D"
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "GigaML",
+      "location": "San Francisco, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-gigaml-4191199369?position=23&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=%2FIqZBvdU8p90pJ4eZ749Sw%3D%3D"
+    },
+    {
+      "title": "Software Development Engineer 1",
+      "company": "Adobe",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-development-engineer-1-at-adobe-4186489771?position=24&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=dadU8Q3Pzx4wk%2BeABabxOA%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Frontend) - Early in Career",
+      "company": "Splunk",
+      "location": "Colorado, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-early-in-career-at-splunk-4177397229?position=25&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=21uYzuZ%2BpAEbs5LEAdvi%2FQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Integrations",
+      "company": "Notion",
+      "location": "New York, NY",
+      "posted_date": "3 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-integrations-at-notion-4194463239?position=26&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=91VNo8bJ8qnnZIdWmHe8og%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Full-Stack)",
+      "company": "Ascertain",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-ascertain-4182984914?position=27&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=EO0QH4G1QpgFpuaA3fguwA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "CLEAR",
+      "location": "Austin, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-clear-4181633460?position=28&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=SyYu3cr6v6LT7Q35Z6x9Ew%3D%3D"
+    },
+    {
+      "title": "Software Engineer (L5), Ads Measurement",
+      "company": "Netflix",
+      "location": "New York, United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-l5-ads-measurement-at-netflix-4178703393?position=29&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=QTgUE4hgQNB%2BKZTem4Vrew%3D%3D"
+    },
+    {
+      "title": "Full Stack Software Engineer 4 - Game Lifecycle Engineering",
+      "company": "Netflix",
+      "location": "United States",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-4-game-lifecycle-engineering-at-netflix-4190181205?position=30&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=7lF68TLB4H%2BWZ7b3MWTJYg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Frontend) - Early in Career",
+      "company": "Splunk",
+      "location": "North Carolina, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-early-in-career-at-splunk-4177390911?position=31&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=UNB9QhJio9qIPc0lQS5C1Q%3D%3D"
+    },
+    {
+      "title": "eCommerce Software Engineer - JavaScript (front OR back-end)",
+      "company": "Nike",
+      "location": "Atlanta, GA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/ecommerce-software-engineer-javascript-front-or-back-end-at-nike-4196107610?position=32&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=3eCGo%2F3JN3xEe7YRUFpGEw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Intern",
+      "company": "Sauron",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-sauron-4187522470?position=33&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=jKt4roemORQPbrXD3enCEQ%3D%3D"
+    },
+    {
+      "title": "Web Front-End Developer",
+      "company": "Lenovo",
+      "location": "Morrisville, NC",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/web-front-end-developer-at-lenovo-4177153274?position=34&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=VCNVcXmWjCfhM6uFOHpSJw%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern",
+      "company": "SHEIN Technology LLC",
+      "location": "Bellevue, WA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-shein-technology-llc-4189077653?position=35&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=6qneULPLVr7cZ1m4MrqkBw%3D%3D"
+    },
+    {
+      "title": "Front End Software Engineer",
+      "company": "Ollie",
+      "location": "United States",
+      "posted_date": "3 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-at-ollie-4177383455?position=36&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=vbwFg4stzjQAjLSLNdRuAg%3D%3D"
+    },
+    {
+      "title": "Software Engineer ( Fullstack) -",
+      "company": "Rakuten Rewards",
+      "location": "New York, NY",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-rakuten-rewards-4182357401?position=37&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=UIjqmOg0KaLrF9aSzI%2FVlw%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Summer Internship",
+      "company": "Lazarus AI",
+      "location": "Boston, MA",
+      "posted_date": "3 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-summer-internship-at-lazarus-ai-4179521486?position=38&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=sBFqaqSYkICwDDvrg74liw%3D%3D"
+    },
+    {
+      "title": "Software Engineer - Backend",
+      "company": "Brigit",
+      "location": "New York, NY",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-brigit-4192884089?position=39&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=ETF5Sa9LJ%2BpWvSjWQp8OFA%3D%3D"
+    },
+    {
+      "title": "Front-End Software Engineer",
+      "company": "Candid",
+      "location": "New York, NY",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-at-candid-4192631066?position=40&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=u0TTBJOoYoA9XzFbC8LjiA%3D%3D"
+    },
+    {
+      "title": "Internship - Software Engineer",
+      "company": "North Texas Tollway Authority",
+      "location": "Plano, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/internship-software-engineer-at-north-texas-tollway-authority-4187658921?position=41&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=272P6SdkkBlV359%2FmO8jBg%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern, Connect",
+      "company": "Posit PBC",
+      "location": "United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-connect-at-posit-pbc-4182143645?position=42&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=xUF8TG1QeGtT%2BD5slW%2FJvA%3D%3D"
+    },
+    {
+      "title": "Software Engineer Internship",
+      "company": "Rad AI",
+      "location": "United States",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-at-rad-ai-4180952900?position=43&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=FYU4IzefdnRTCQxSa5zyqA%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "CLEAR",
+      "location": "Austin, TX",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-clear-4184676307?position=44&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=3JWIyULq%2Byozae4dG1%2FnCA%3D%3D"
+    },
+    {
+      "title": "Software Engineer Intern, Summer 2025",
+      "company": "Centerfield",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-summer-2025-at-centerfield-4177414792?position=45&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=8XiaV%2F39jHBd2Cm361k9Jw%3D%3D"
+    },
+    {
+      "title": "Junior Software Development Engineer",
+      "company": "Nexio",
+      "location": "Orem, UT",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-development-engineer-at-nexio-4185661815?position=46&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=rFSU9loQdJvRhUrwc5edYQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer Internship (12 months)",
+      "company": "Clerkie",
+      "location": "San Francisco, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-12-months-at-clerkie-4184721472?position=47&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=TFIIMDdw2o4bPVfDvXTxIg%3D%3D"
+    },
+    {
+      "title": "Software Engineer (Backend/Fullstack) - Early in Career",
+      "company": "Splunk",
+      "location": "Colorado, United States",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-fullstack-early-in-career-at-splunk-4177391894?position=48&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=qFxQxyt3ji2OC0fjqFObag%3D%3D"
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "Everblue",
+      "location": "Davidson, NC",
+      "posted_date": "2 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-everblue-4191846884?position=49&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=p3Z3P7cWWiyOy1ZWE9MObg%3D%3D"
+    },
+    {
+      "title": "Software Engineer ( Fullstack) -",
+      "company": "Rakuten Rewards",
+      "location": "San Francisco, CA",
+      "posted_date": "4 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-fullstack-at-rakuten-rewards-4193615682?position=50&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=2nvLNomdjBnB%2FEzxTFK0Ew%3D%3D"
+    },
+    {
+      "title": "Associate Software Engineer",
+      "company": "Focus AI",
+      "location": "New York, NY",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/associate-software-engineer-at-focus-ai-4190713186?position=51&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=WTn0KyHn6dZC%2BjwHWUft5w%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Ikigai",
+      "location": "Cambridge, MA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-ikigai-4192423780?position=52&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=S%2BYGxkrM20qyNSEoR1UuuA%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Snowflake",
+      "location": "Menlo Park, CA",
+      "posted_date": "1 day ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-snowflake-4192503331?position=53&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=G5S4wuRSAUPH%2BV9TT7YBwQ%3D%3D"
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4187085890?position=54&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=BXwRrA2nQHY0b6wNBtvHVw%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Venchr",
+      "location": "San Francisco Bay Area",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-venchr-4176937791?position=55&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=VN0eBbzFpfqauJLxXkL3PA%3D%3D"
+    },
+    {
+      "title": "Nuuly Web Software Engineer",
+      "company": "Nuuly",
+      "location": "Philadelphia, PA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/nuuly-web-software-engineer-at-nuuly-4181221888?position=56&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=%2BKnrqu6t6TMhW3Z71rcqGw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Early Stage Project",
+      "company": "X, The Moonshot Factory",
+      "location": "Mountain View, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-stage-project-at-x-the-moonshot-factory-4180095903?position=57&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=oT%2FDzEfLzLnCBHi0X20Lqw%3D%3D"
+    },
+    {
+      "title": "Software Engineer, Chrome Desktop",
+      "company": "Google",
+      "location": "Seattle, WA",
+      "posted_date": "5 days ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-chrome-desktop-at-google-4189397260?position=58&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=tm4H5ObUi39zY978nxhhAg%3D%3D"
+    },
+    {
+      "title": "2025 Intern - Software Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "posted_date": "1 week ago",
+      "job_url": "https://www.linkedin.com/jobs/view/2025-intern-software-engineer-at-adobe-4184721335?position=59&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=e%2B1eb2R5swpNXELMfCGvZQ%3D%3D"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Deep Sky",
+      "location": "Los Angeles, CA",
+      "posted_date": "2 weeks ago",
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-at-deep-sky-4185055200?position=60&pageNum=0&refId=6kcMt8Hc4DB3qGDWGL%2FW%2Bg%3D%3D&trackingId=4K9zo%2FTq6ukffMTgI62tvw%3D%3D"
+    }
+  ]
+}
