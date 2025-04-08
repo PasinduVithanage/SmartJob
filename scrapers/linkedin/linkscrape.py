@@ -5,7 +5,7 @@ from datetime import datetime
 from playwright.async_api import async_playwright
 
 MAX_JOBS = 1000
-INITIAL_URL = "https://www.linkedin.com/jobs/search?keywords=&location=Sri%20Lanka&geoId=100446352&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0"
+INITIAL_URL = "https://www.linkedin.com/jobs/search/?keywords=Software%20Developer&location=Sri%20Lanka&geoId=100446352&trk=public_jobs_jobs-search-bar_search-submit&position=1"
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "public", "data", "linkedin_jobs.json")
 
 async def scrape_linkedin_jobs():
