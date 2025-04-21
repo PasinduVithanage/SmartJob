@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 from playwright.async_api import async_playwright
+from job_processor import LinkedInJobProcessor
 
 MAX_JOBS = 1000
 INITIAL_URL = "https://www.linkedin.com/jobs/search/?keywords=Software%20Developer&location=Sri%20Lanka&geoId=100446352&trk=public_jobs_jobs-search-bar_search-submit&position=1"
@@ -75,19 +76,16 @@ async def scrape_linkedin_jobs():
                         await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
                         await asyncio.sleep(2)
 
-            # Save all jobs to single file
-            os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-            with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-                json.dump({
-                    "meta": {
-                        "total_jobs": len(all_jobs),
-                        "timestamp": datetime.now().isoformat(),
-                        "url": INITIAL_URL
-                    },
-                    "jobs": all_jobs
-                }, f, ensure_ascii=False, indent=2)
+            # After scraping, process jobs
+            processor = LinkedInJobProcessor()
+            
+            # Process new jobs
+            processor.process_jobs(all_jobs)
+            
+            # Remove expired jobs
+            processor.remove_expired_jobs()
 
-            print(f"\nFinished! Saved {len(all_jobs)} jobs to {OUTPUT_FILE}")
+            print(f"\nFinished! Processed {len(all_jobs)} jobs and updated Qdrant database")
             await browser.close()
             return True
 

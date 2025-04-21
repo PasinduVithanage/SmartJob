@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { fetchJobsFromQdrant, searchJobsWithFilters } from '../services/jobService';
 
 // Types
 export interface Job {
@@ -213,28 +214,24 @@ export const useJobStore = create<JobState>()((set, get) => ({
     try {
       set({ isLoading: true });
       
-      // Read the LinkedIn jobs data from the JSON file
-      const response = await fetch('/data/linkedin_jobs.json');
-      if (!response.ok) throw new Error('Failed to fetch jobs');
-      const data = await response.json();
+      const data = await fetchJobsFromQdrant();
       
-      // Transform LinkedIn data to match our Job interface
-      const transformedJobs: Job[] = data.jobs.map((job: any) => ({
-        id: job.listing_id.split(':').pop() || '',
-        title: job.title,
-        company: job.company,
-        location: job.location,
-        salary: 'Not disclosed', // LinkedIn data doesn't include salary
-        type: 'Full-time', // Default value as LinkedIn data doesn't specify
-        description: `Position at ${job.company}`,
-        requirements: [], // Can be populated if available in LinkedIn data
-        postedDate: job.posted_date,
-        joburl: job.job_url,
-        logo: 'https://placehold.co/100', // Default logo
-        category: 'Not specified', // Can be determined based on job title
+      // Transform Qdrant data to match our Job interface
+      const transformedJobs: Job[] = data.map((job: any) => ({
+        id: job.id.toString(),
+        title: job.payload.title,
+        company: job.payload.company,
+        location: job.payload.location,
+        salary: 'Not disclosed',
+        type: 'Full-time',
+        description: `Position at ${job.payload.company}`,
+        requirements: [],
+        postedDate: job.payload.posted_date,
+        joburl: job.payload.job_url,
+        logo: 'https://placehold.co/100',
+        category: 'Not specified',
         experience: 'Not specified',
-        skills: [], // Can be extracted from job title/description
-       
+        skills: [],
       }));
       
       set({ 
@@ -312,20 +309,43 @@ export const useJobStore = create<JobState>()((set, get) => ({
     
     set({ filteredJobs });
   },
-  searchJobs: (query) => {
-    const { jobs } = get();
-    if (!query.trim()) {
-      set({ filteredJobs: jobs });
-      return;
+  searchJobs: async (query: string) => {
+    try {
+      set({ isLoading: true });
+      const filters = {
+        query,
+        location: undefined,
+        skills: undefined,
+        jobType: undefined,
+      };
+
+      const data = await searchJobsWithFilters(filters);
+      
+      // Transform Qdrant search results
+      const transformedJobs: Job[] = data.map((job: any) => ({
+        id: job.id.toString(),
+        title: job.payload.title,
+        company: job.payload.company,
+        location: job.payload.location,
+        salary: 'Not disclosed',
+        type: job.payload.type || 'Full-time',
+        description: job.payload.description || `Position at ${job.payload.company}`,
+        requirements: [],
+        postedDate: job.payload.posted_date,
+        joburl: job.payload.job_url,
+        logo: 'https://placehold.co/100',
+        category: 'Not specified',
+        experience: 'Not specified',
+        skills: job.payload.skills || [],
+      }));
+
+      set({ 
+        filteredJobs: transformedJobs,
+        isLoading: false 
+      });
+    } catch (error) {
+      console.error('Search failed:', error);
+      set({ error: 'Search failed', isLoading: false });
     }
-    
-    const searchResults = jobs.filter(job => 
-      job.title.toLowerCase().includes(query.toLowerCase()) ||
-      job.company.toLowerCase().includes(query.toLowerCase()) ||
-      job.description.toLowerCase().includes(query.toLowerCase()) ||
-      job.skills?.some(skill => skill.toLowerCase().includes(query.toLowerCase()))
-    );
-    
-    set({ filteredJobs: searchResults });
-  }
+  },
 }));
