@@ -8,6 +8,7 @@ import { useAuthStore, useJobStore } from '@/store/store';
 import SavedJobsList from '@/components/ui/SavedJobsList';
 import CVUpload from '@/components/ui/CVUpload';
 import { Briefcase, FileText, Heart, Settings, User, LogOut, Mail, Phone, MapPin } from 'lucide-react';
+import CVAnalysis from '@/components/ui/CVAnalysis';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -305,6 +306,7 @@ function AnimatedTabPanel({ activeTab }: AnimatedTabPanelProps) {
         </div>
       )}
       
+      {/* // Replace the CV analysis section with the new component */}
       {activeTab === 'cv' && (
         <div>
           <h2 className="text-xl font-medium mb-6">CV & Documents</h2>
@@ -315,30 +317,7 @@ function AnimatedTabPanel({ activeTab }: AnimatedTabPanelProps) {
             <p className="text-muted-foreground mb-6">
               Upload your CV to get personalized job recommendations based on your skills and experience.
             </p>
-            
-            {user?.cv ? (
-              <div className="bg-primary/10 rounded-lg p-4">
-                <h4 className="font-medium mb-2">AI Analysis Complete</h4>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Based on your CV, we recommend exploring these job categories:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-xs rounded-full bg-secondary dark:bg-secondary/50 text-secondary-foreground">
-                    Web Development
-                  </span>
-                  <span className="px-3 py-1 text-xs rounded-full bg-secondary dark:bg-secondary/50 text-secondary-foreground">
-                    UX/UI Design
-                  </span>
-                  <span className="px-3 py-1 text-xs rounded-full bg-secondary dark:bg-secondary/50 text-secondary-foreground">
-                    Product Management
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <p className="italic text-muted-foreground">
-                No CV uploaded yet. Upload your CV to get started.
-              </p>
-            )}
+            <CVAnalysis />
           </div>
         </div>
       )}
