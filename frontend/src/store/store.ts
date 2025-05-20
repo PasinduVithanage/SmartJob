@@ -308,13 +308,12 @@ export const useJobStore = create<JobState>()((set, get) => ({
       const filters = {
         query,
         location: undefined,
-        skills: undefined,
         jobType: undefined,
       };
-
+  
       const data = await searchJobsWithFilters(filters);
       
-      // Transform Qdrant search results
+      // Transform search results
       const transformedJobs: Job[] = data.map((job: any) => ({
         id: job.id.toString(),
         title: job.payload.title,
@@ -331,7 +330,7 @@ export const useJobStore = create<JobState>()((set, get) => ({
         experience: 'Not specified',
         skills: job.payload.skills || [],
       }));
-
+  
       set({ 
         filteredJobs: transformedJobs,
         isLoading: false 

@@ -18,6 +18,7 @@ import {
   DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useJobStore } from '@/store/store';
 
 interface SearchBarProps {
   className?: string;
@@ -38,25 +39,37 @@ export default function SearchBar({ className = '', onSearch, variant = 'default
   const [skills, setSkills] = useState<string[]>([]);
   const [jobType, setJobType] = useState('');
   const navigate = useNavigate();
+  const { searchJobs, filterJobs } = useJobStore();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const searchParams: SearchParams = {
-      query,
-      location,
-      skills,
-      jobType
-    };
+    // First, apply the search query
+    if (query) {
+      searchJobs(query);
+    }
+    
+    // Then apply any filters
+    const filters: any = {};
+    if (location) filters.location = location;
+    if (jobType) filters.type = jobType;
+    
+    if (Object.keys(filters).length > 0) {
+      filterJobs(filters);
+    }
     
     if (onSearch) {
-      onSearch(searchParams);
+      onSearch({
+        query,
+        location,
+        skills,
+        jobType
+      });
     } else {
       // Navigate to jobs page with search params
       const queryParams = new URLSearchParams();
       if (query) queryParams.append('q', query);
       if (location) queryParams.append('location', location);
-      if (skills.length > 0) queryParams.append('skills', skills.join(','));
       if (jobType) queryParams.append('jobType', jobType);
       
       navigate(`/jobs?${queryParams.toString()}`);
@@ -120,40 +133,6 @@ export default function SearchBar({ className = '', onSearch, variant = 'default
             onChange={(e) => setLocation(e.target.value)}
             className="w-full"
           />
-        </div>
-        
-        <div className="flex-1">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="w-full justify-between font-normal"
-              >
-                {skills.length > 0 
-                  ? `${skills.length} skill${skills.length > 1 ? 's' : ''} selected` 
-                  : 'Select skills'}
-                <span className="ml-2 opacity-70">▼</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-background border border-border p-2">
-              {skillOptions.map((skill) => (
-                <div key={skill.value} className="flex items-center space-x-2 p-2 hover:bg-secondary rounded-md cursor-pointer">
-                  <Checkbox 
-                    id={`skill-${skill.value}`}
-                    checked={skills.includes(skill.value)}
-                    onCheckedChange={() => toggleSkill(skill.value)}
-                  />
-                  <label 
-                    htmlFor={`skill-${skill.value}`}
-                    className="text-sm cursor-pointer flex-1"
-                    onClick={() => toggleSkill(skill.value)}
-                  >
-                    {skill.label}
-                  </label>
-                </div>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
         
         <div className="flex-1">

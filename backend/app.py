@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 from qdrant_client import QdrantClient
-from sentence_transformers import SentenceTransformer
 import os
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
@@ -13,9 +12,6 @@ CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 # Load environment variables
 load_dotenv()
-
-# Initialize models
-model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # Define upload configuration
 UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uploads'))
@@ -64,71 +60,63 @@ def search_jobs():
         search_data = request.json
         query = search_data.get('query', '')
         location = search_data.get('location')
-        skills = search_data.get('skills', [])
         job_type = search_data.get('jobType')
         page = search_data.get('page', 1)
-        per_page = search_data.get('per_page', 20)
-
-        # Create search text combining query and filters
-        search_text = query
-        if skills:
-            search_text += f" {' '.join(skills)}"
-        if job_type:
-            search_text += f" {job_type}"
-
-        # Generate embedding for search query
-        query_vector = model.encode(search_text).tolist()
-
-        # Create filter conditions
-        filter_conditions = []
-        if location:
-            filter_conditions.append({
-                "key": "location",
-                "match": {"text": location}
-            })
-        if job_type:
-            filter_conditions.append({
-                "key": "type",
-                "match": {"text": job_type}
-            })
+        per_page = search_data.get('per_page', 1000)
 
         # Connect to Qdrant
         client = QdrantClient("localhost", port=6333)
         
-        # Search with filters and score threshold
-        search_result = client.search(
+        # Get all jobs first
+        all_jobs = client.scroll(
             collection_name="jobs",
-            query_vector=query_vector,
-            query_filter={"must": filter_conditions} if filter_conditions else None,
-            limit=100,  # Get more results for filtering
-            score_threshold=0.3  # Only return relevant matches
-        )
-
-        # Sort by score and get the most relevant jobs
-        sorted_jobs = sorted(search_result, key=lambda x: x.score, reverse=True)
+            limit=1000,  # Adjust limit as needed
+            with_payload=True,
+            with_vectors=False
+        )[0]
+        
+        # Filter jobs based on traditional search criteria
+        filtered_jobs = []
+        for job in all_jobs:
+            job_payload = job.payload
+            job_title = job_payload.get('title', '').lower()
+            job_location = job_payload.get('location', '').lower()
+            job_job_type = job_payload.get('type', '').lower()
+            
+            # Check if job matches all provided criteria
+            matches = True
+            
+            # Title search
+            if query and query.lower() not in job_title:
+                matches = False
+                
+            # Location filter
+            if location and location.lower() not in job_location:
+                matches = False
+                
+            # Job type filter
+            if job_type and job_type.lower() != job_job_type.lower():
+                matches = False
+                
+            if matches:
+                filtered_jobs.append({
+                    'id': job.id,
+                    'payload': job_payload
+                })
         
         # Apply pagination
+        total_results = len(filtered_jobs)
         start_idx = (page - 1) * per_page
         end_idx = start_idx + per_page
-        paginated_jobs = sorted_jobs[start_idx:end_idx]
-
-        # Convert results to JSON-serializable format
-        jobs = [
-            {
-                'id': result.id,
-                'payload': result.payload,
-                'score': round(result.score, 4)  # Round score for readability
-            }
-            for result in paginated_jobs
-        ]
+        paginated_jobs = filtered_jobs[start_idx:end_idx]
         
         return jsonify({
             'status': 'success',
-            'data': jobs,
-            'total': len(sorted_jobs),
+            'data': paginated_jobs,
+            'total': total_results,
             'page': page,
             'per_page': per_page,
-            'total_pages': (len(sorted_jobs) + per_page - 1) // per_page
+            'total_pages': (total_results + per_page - 1) // per_page
         })
 
     except Exception as e:
@@ -202,25 +190,21 @@ def analyze_cv_endpoint():
         analysis_text = analyze_cv(cv_json)
         
         # Parse the analysis into structured data
-        try:
-            parsed_analysis = parse_gemini_output(analysis_text)
-            
-            # Find matching jobs based on skills and categories
-            matching_jobs = find_matching_jobs(parsed_analysis['skills'], parsed_analysis['categories'])
-            
-            # Return the analysis and job recommendations
-            return jsonify({
-                'skills': parsed_analysis['skills'],
-                'experience': parsed_analysis['experience'],
-                'improvements': parsed_analysis['improvements'],
-                'categories': parsed_analysis['categories'],
-                'score': parsed_analysis['score'],
-                'matchedJobs': len(matching_jobs),
-                'recommendations': matching_jobs
-            })
-        except Exception as inner_e:
-            print(f"Parsing error: {str(inner_e)}")
-            return jsonify({'error': f'Error parsing CV analysis: {str(inner_e)}'}), 500
+        parsed_analysis = parse_gemini_output(analysis_text)
+        
+        # Find matching jobs based on skills and categories
+        matching_jobs = find_matching_jobs(parsed_analysis['skills'], parsed_analysis['categories'])
+        
+        # Return the analysis and job recommendations
+        return jsonify({
+            'skills': parsed_analysis['skills'],
+            'experience': parsed_analysis['experience'],
+            'improvements': parsed_analysis['improvements'],
+            'categories': parsed_analysis['categories'],
+            'score': parsed_analysis['score'],
+            'matchedJobs': len(matching_jobs),
+            'recommendations': matching_jobs
+        })
         
     except Exception as e:
         print(f"CV Analysis error: {str(e)}")

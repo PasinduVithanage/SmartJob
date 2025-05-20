@@ -16,8 +16,9 @@ interface QdrantJob {
 interface SearchFilters {
   query: string;
   location?: string;
-  skills?: string[];
   jobType?: string;
+  page?: number;
+  per_page?: number;
 }
 
 export const fetchJobsFromQdrant = async () => {
@@ -44,7 +45,7 @@ export const searchJobsWithFilters = async (filters: SearchFilters) => {
     
     if (!response.ok) throw new Error('Failed to search jobs');
     const data = await response.json();
-    return data;
+    return data.data; // Return just the jobs array
   } catch (error) {
     console.error('Error searching jobs:', error);
     throw error;

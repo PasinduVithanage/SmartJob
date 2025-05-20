@@ -237,32 +237,73 @@ def parse_gemini_output(analysis_text):
         }
 
 def find_matching_jobs(skills, categories, threshold=0.6):
-    """Find matching jobs based on skills and categories."""
+    """Find matching jobs based on skills, categories, and other criteria using traditional filtering."""
     try:
         client = QdrantClient("localhost", port=6333)
         
-        # Create search text from skills and categories
-        search_text = " ".join(skills + categories)
+        # Create filter conditions
+        filter_conditions = []
         
-        # Use SentenceTransformer to create embedding
-        from sentence_transformers import SentenceTransformer
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        query_vector = model.encode(search_text).tolist()
+        # Extract job titles from categories (assuming job titles are in categories)
+        job_titles = [cat for cat in categories if not cat.startswith("Technology") and not cat.startswith("Business")]
         
-        # Search for matching jobs
-        search_result = client.search(
+        # Add job title filter if available
+        if job_titles:
+            title_conditions = []
+            for title in job_titles:
+                title_conditions.append({
+                    "key": "title",
+                    "match": {"text": title}
+                })
+            if len(title_conditions) > 1:
+                filter_conditions.append({"should": title_conditions})
+            else:
+                filter_conditions.append(title_conditions[0])
+        
+        # Add skills filter
+        if skills:
+            skill_conditions = []
+            for skill in skills:
+                skill_conditions.append({
+                    "key": "skills",
+                    "match": {"text": skill}
+                })
+            if len(skill_conditions) > 1:
+                filter_conditions.append({"should": skill_conditions})
+            else:
+                filter_conditions.append(skill_conditions[0])
+        
+        # Add category filter (Technology, Business, etc.)
+        category_filters = [cat for cat in categories if cat.startswith("Technology") or cat.startswith("Business")]
+        if category_filters:
+            category_conditions = []
+            for category in category_filters:
+                category_conditions.append({
+                    "key": "category",
+                    "match": {"text": category}
+                })
+            if len(category_conditions) > 1:
+                filter_conditions.append({"should": category_conditions})
+            else:
+                filter_conditions.append(category_conditions[0])
+        
+        # Construct the final filter
+        final_filter = {"must": filter_conditions} if filter_conditions else None
+        
+        # Scroll through all jobs with the filter
+        search_result = client.scroll(
             collection_name="jobs",
-            query_vector=query_vector,
-            limit=10,  # Return top 10 matches
-            score_threshold=threshold  # Only return relevant matches
-        )
+            scroll_filter=final_filter,
+            limit=10,
+            with_payload=True
+        )[0]  # [0] gets the points, [1] gets the next_page_offset
         
         # Convert results to JSON-serializable format
         matching_jobs = [
             {
                 'id': result.id,
                 'payload': result.payload,
-                'score': round(result.score, 4)
+                'score': 1.0  # Default score since we're not using vector search
             }
             for result in search_result
         ]
