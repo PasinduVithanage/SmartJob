@@ -46,7 +46,7 @@ def allowed_file(filename):
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():
     try:
-        client = QdrantClient("localhost", port=6333)
+        client = QdrantClient("localhost", port=7000)
         
         # Fetch all jobs from Qdrant
         points = client.scroll(

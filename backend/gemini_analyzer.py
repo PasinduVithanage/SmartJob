@@ -239,7 +239,7 @@ def parse_gemini_output(analysis_text):
 def find_matching_jobs(skills, categories, threshold=0.6):
     """Find matching jobs based on skills, categories, and other criteria using traditional filtering."""
     try:
-        client = QdrantClient("localhost", port=6333)
+        client = QdrantClient("localhost", port=7000)
         
         # Create filter conditions
         filter_conditions = []

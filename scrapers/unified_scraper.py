@@ -30,7 +30,7 @@ async def run_unified_scraper():
             linkedin_processor.remove_expired_jobs(days_threshold=30)
             
             # Remove duplicate jobs based on listing ID
-            client = QdrantClient("localhost", port=6333)
+            client = QdrantClient("localhost", port=7000)
             seen_listings = set()
             to_delete = []
             offset = 0

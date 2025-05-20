@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class TopJobsProcessor:
     def __init__(self):
-        self.qdrant = QdrantClient("localhost", port=6333)
+        self.qdrant = QdrantClient("localhost", port=7000)
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
 
     def _create_job_embedding(self, job):
