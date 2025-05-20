@@ -33,7 +33,7 @@ export default function FeatureSection() {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-display font-medium mb-4">Why Choose Us</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          JobFinder provides an intuitive platform designed to streamline your job search and connect you with opportunities that match your skills and aspirations.
+          SmartJob provides an intuitive platform designed to streamline your job search and connect you with opportunities that match your skills and aspirations.
         </p>
       </div>
 
