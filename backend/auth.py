@@ -4,37 +4,51 @@ import hashlib
 import uuid
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
+from qdrant_client.http.exceptions import UnexpectedResponse
 
-app = Flask(__name__)
-CORS(app)
+# Remove the Flask app creation from this file
+# app = Flask(__name__)
+# CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 # Initialize Qdrant client
 qdrant_client = QdrantClient(host="localhost", port=6333)
 
 # Create users collection if it doesn't exist
 try:
+    # First try to get the collection to see if it exists
     qdrant_client.get_collection("users")
-except Exception:
-    qdrant_client.create_collection(
-        collection_name="users",
-        vectors_config=models.VectorParams(size=1, distance=models.Distance.COSINE),
-    )
+    print("Users collection already exists")
+except Exception as e:
+    # Only create if it doesn't exist
+    try:
+        qdrant_client.create_collection(
+            collection_name="users",
+            vectors_config=models.VectorParams(size=1, distance=models.Distance.COSINE),
+        )
+        print("Created users collection")
+    except UnexpectedResponse as e:
+        # If we get a 409 Conflict, the collection already exists
+        if "already exists" in str(e):
+            print("Users collection already exists (caught in create)")
+        else:
+            # Re-raise if it's a different error
+            raise
 
 # Helper function to hash passwords
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
-@app.route('/api/auth/signup', methods=['POST'])
-def signup():
+# Define functions without the app.route decorator
+def signup_handler():
     data = request.json
     name = data.get('name')
     email = data.get('email')
     password = data.get('password')
     
-    # Check if user already exists
-    search_result = qdrant_client.search(
+    # Check if user already exists using scroll instead of search
+    scroll_result = qdrant_client.scroll(
         collection_name="users",
-        query_filter=models.Filter(
+        scroll_filter=models.Filter(
             must=[
                 models.FieldCondition(
                     key="email",
@@ -43,9 +57,9 @@ def signup():
             ]
         ),
         limit=1
-    )
+    )[0]  # Get the points from the tuple (points, next_page_offset)
     
-    if search_result:
+    if scroll_result:
         return jsonify({"error": "User already exists"}), 400
     
     # Create new user
@@ -60,8 +74,8 @@ def signup():
         "appliedJobs": []
     }
     
-    # Store user in Qdrant
-    qdrant_client.upload_points(
+    # Store user in Qdrant - using upsert instead of upsert_points
+    qdrant_client.upsert(
         collection_name="users",
         points=[
             models.PointStruct(
@@ -78,16 +92,15 @@ def signup():
     
     return jsonify({"user": user_data}), 201
 
-@app.route('/api/auth/login', methods=['POST'])
-def login():
+def login_handler():
     data = request.json
     email = data.get('email')
     password = data.get('password')
     
-    # Search for user by email
-    search_result = qdrant_client.search(
+    # Search for user by email using scroll instead of search
+    scroll_result = qdrant_client.scroll(
         collection_name="users",
-        query_filter=models.Filter(
+        scroll_filter=models.Filter(
             must=[
                 models.FieldCondition(
                     key="email",
@@ -96,12 +109,12 @@ def login():
             ]
         ),
         limit=1
-    )
+    )[0]  # Get the points from the tuple (points, next_page_offset)
     
-    if not search_result:
+    if not scroll_result:
         return jsonify({"error": "Invalid email or password"}), 401
     
-    user = search_result[0].payload
+    user = scroll_result[0].payload
     
     # Verify password
     if user["password"] != hash_password(password):
@@ -112,6 +125,3 @@ def login():
     del user_data["password"]
     
     return jsonify({"user": user_data}), 200
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)

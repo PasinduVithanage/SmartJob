@@ -6,6 +6,8 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from pdf_to_json import extract_text_from_pdf, cv_to_json
 from gemini_analyzer import analyze_cv, parse_gemini_output, find_matching_jobs
+# Import the auth handlers
+from auth import signup_handler, login_handler
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
@@ -27,6 +29,19 @@ def init_app():
 
 # Call initialization when creating the app
 init_app()
+
+# Add the auth routes
+@app.route('/api/auth/signup', methods=['POST'])
+def signup():
+    return signup_handler()
+
+@app.route('/api/auth/login', methods=['POST'])
+def login():
+    return login_handler()
+
+# Helper function for file uploads
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():

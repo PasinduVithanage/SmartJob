@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { fetchJobsFromQdrant, searchJobsWithFilters } from '../services/jobService';
+import { loginUser, signupUser, logoutUser } from '../services/authService';
 
 // Types
 export interface Job {
@@ -81,120 +82,94 @@ export const useThemeStore = create<ThemeState>()(
   })
 );
 
-// Auth store
-export const useAuthStore = create<AuthState>((set) => ({
-  user: null,
-  isAuthenticated: false,
-  login: async (email, password) => {
-    try {
-      // This would be an API call to Flask in a real app
-      // const response = await fetch(`${API_URL}/auth/login`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email, password }),
-      // });
-      // if (!response.ok) throw new Error('Login failed');
-      // const data = await response.json();
-      
-      // Mock response for demonstration
-      const mockUser: User = {
-        id: '1',
-        name: email,
-        email: email,
-        isAdmin: email === 'admin@example.com',
-        savedJobs: [],
-        appliedJobs: [],
-      };
-      set({ user: mockUser, isAuthenticated: true });
-    } catch (error) {
-      console.error('Login failed', error);
-      throw new Error('Login failed');
-    }
-  },
-  signup: async (name, email, password) => {
-    try {
-      // This would be an API call to Flask in a real app
-      // const response = await fetch(`${API_URL}/auth/signup`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ name, email, password }),
-      // });
-      // if (!response.ok) throw new Error('Signup failed');
-      // const data = await response.json();
-      
-      // Mock response for demonstration
-      const mockUser: User = {
-        id: '1',
-        name: name,
-        email: email,
-        isAdmin: false,
-        savedJobs: [],
-        appliedJobs: [],
-      };
-      set({ user: mockUser, isAuthenticated: true });
-    } catch (error) {
-      console.error('Signup failed', error);
-      throw new Error('Signup failed');
-    }
-  },
-  logout: () => {
-    set({ user: null, isAuthenticated: false });
-  },
-  saveJob: (jobId) => {
-    const { user } = useAuthStore.getState();
-    if (!user) return;
-    set({
-      user: {
-        ...user,
-        savedJobs: [...user.savedJobs, jobId],
+// Auth store with persistence
+export const useAuthStore = create<AuthState>()(
+  persist(
+    (set) => ({
+      user: null,
+      isAuthenticated: false,
+      login: async (email, password) => {
+        try {
+          const response = await loginUser({ email, password });
+          set({ user: response.user, isAuthenticated: true });
+        } catch (error) {
+          console.error('Login failed', error);
+          throw error;
+        }
       },
-    });
-  },
-  unsaveJob: (jobId) => {
-    const { user } = useAuthStore.getState();
-    if (!user) return;
-    set({
-      user: {
-        ...user,
-        savedJobs: user.savedJobs.filter((id) => id !== jobId),
+      signup: async (name, email, password) => {
+        try {
+          const response = await signupUser({ name, email, password });
+          set({ user: response.user, isAuthenticated: true });
+        } catch (error) {
+          console.error('Signup failed', error);
+          throw error;
+        }
       },
-    });
-  },
-  applyToJob: (jobId) => {
-    const { user } = useAuthStore.getState();
-    if (!user) return;
-    if (user.appliedJobs.includes(jobId)) return;
-    set({
-      user: {
-        ...user,
-        appliedJobs: [...user.appliedJobs, jobId],
+      logout: () => {
+        logoutUser(); // Call the logout service
+        set({ user: null, isAuthenticated: false });
       },
-    });
-  },
-  uploadCV: async (file: File) => {
-    try {
-      const formData = new FormData();
-      formData.append('cv', file);
-      
-      // Upload to storage and get URL
-      const uploadResponse = await fetch('http://localhost:5000/api/upload-cv', {
-        method: 'POST',
-        body: formData,
-      });
-      
-      if (!uploadResponse.ok) throw new Error('Failed to upload CV');
-      
-      const { cvUrl } = await uploadResponse.json();
-      
-      // Update user state with CV URL
-      set((state) => ({
-        user: { ...state.user, cv: cvUrl }
-      }));
-    } catch (error) {
-      throw new Error('Failed to upload CV');
+      saveJob: (jobId) => {
+        set((state) => {
+          if (!state.user) return state;
+          return {
+            user: {
+              ...state.user,
+              savedJobs: [...state.user.savedJobs, jobId],
+            }
+          };
+        });
+      },
+      unsaveJob: (jobId) => {
+        set((state) => {
+          if (!state.user) return state;
+          return {
+            user: {
+              ...state.user,
+              savedJobs: state.user.savedJobs.filter((id) => id !== jobId),
+            }
+          };
+        });
+      },
+      applyToJob: (jobId) => {
+        set((state) => {
+          if (!state.user || state.user.appliedJobs.includes(jobId)) return state;
+          return {
+            user: {
+              ...state.user,
+              appliedJobs: [...state.user.appliedJobs, jobId],
+            }
+          };
+        });
+      },
+      uploadCV: async (file: File) => {
+        try {
+          const formData = new FormData();
+          formData.append('cv', file);
+          
+          const uploadResponse = await fetch('http://localhost:5000/api/upload-cv', {
+            method: 'POST',
+            body: formData,
+          });
+          
+          if (!uploadResponse.ok) throw new Error('Failed to upload CV');
+          
+          const { cvUrl } = await uploadResponse.json();
+          
+          set((state) => ({
+            user: state.user ? { ...state.user, cv: cvUrl } : null
+          }));
+        } catch (error) {
+          throw new Error('Failed to upload CV');
+        }
+      },
+    }),
+    {
+      name: 'auth-storage',
     }
-  },
-}));
+  )
+);
 
 // Job store
 export const useJobStore = create<JobState>()((set, get) => ({
