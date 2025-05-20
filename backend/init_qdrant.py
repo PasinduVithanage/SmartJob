@@ -3,7 +3,7 @@ from qdrant_client.models import Distance, VectorParams
 
 def init_qdrant():
     try:
-        client = QdrantClient("localhost", port=7000)
+        client = QdrantClient("localhost", port=6333)
         
         # Create jobs collection if it doesn't exist
         collections = client.get_collections().collections

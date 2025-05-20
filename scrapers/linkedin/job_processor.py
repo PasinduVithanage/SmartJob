@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class LinkedInJobProcessor:
     def __init__(self):
-        self.qdrant = QdrantClient("localhost", port=7000)
+        self.qdrant = QdrantClient("localhost", port=6333)
         # Using a smaller, efficient model
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
         

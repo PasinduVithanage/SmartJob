@@ -239,7 +239,7 @@ def parse_gemini_output(analysis_text):
 def find_matching_jobs(skills, categories, threshold=0.6):
     """Find matching jobs based on skills, categories, and other criteria using traditional filtering."""
     try:
-        client = QdrantClient("localhost", port=7000)
+        client = QdrantClient("localhost", port=6333)
         
         # Create filter conditions
         filter_conditions = []
@@ -303,7 +303,7 @@ def find_matching_jobs(skills, categories, threshold=0.6):
             {
                 'id': result.id,
                 'payload': result.payload,
-                'score': 1.0  # Default score since we're not using vector search
+                'score': 1.0  # Default score vector search
             }
             for result in search_result
         ]

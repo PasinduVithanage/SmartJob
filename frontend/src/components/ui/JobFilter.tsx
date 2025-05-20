@@ -103,7 +103,7 @@ export default function JobFilter({ onFilterChange, className = '' }: JobFilterP
               </Select>
             </div>
 
-            <div>
+            {/* <div>
               <label className="text-sm font-medium mb-1 block">Category</label>
               <Select
                 value={filters.category || "all-categories"}
@@ -122,9 +122,9 @@ export default function JobFilter({ onFilterChange, className = '' }: JobFilterP
                   <SelectItem value="DevOps">DevOps</SelectItem>
                 </SelectContent>
               </Select>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <label className="text-sm font-medium mb-1 block">Salary Range</label>
               <Select
                 value={filters.salary || "any-salary"}
@@ -142,7 +142,7 @@ export default function JobFilter({ onFilterChange, className = '' }: JobFilterP
                   <SelectItem value="150000+">$150,000+</SelectItem>
                 </SelectContent>
               </Select>
-            </div>
+            </div> */}
 
             <div className="pt-4 flex items-center justify-between border-t border-border">
               <Button

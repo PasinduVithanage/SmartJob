@@ -11,7 +11,7 @@ from qdrant_client.http.exceptions import UnexpectedResponse
 # CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 # Initialize Qdrant client
-qdrant_client = QdrantClient(host="localhost", port=7000)
+qdrant_client = QdrantClient(host="localhost", port=6333)
 
 # Create users collection if it doesn't exist
 try:
