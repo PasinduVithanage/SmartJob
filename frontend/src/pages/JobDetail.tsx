@@ -327,12 +327,12 @@ export default function JobDetail() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-8 py-3 rounded-full font-medium transition-all bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center"
                   >
-                    <Send className="mr-2 h-5 w-5" />
-                    Apply on LinkedIn
+                    
+                   Apply Job  {currentJob.source}
+                   <Send className="mr-2 h-5 w-5" />
                   </a>
               </div>
             </motion.div>
-            
             {/* Job details */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div 

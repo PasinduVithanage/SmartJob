@@ -56,7 +56,7 @@ export default function Index() {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold mb-6 tracking-tight text-balance">
                 Find Your Dream Job <br className="hidden md:block" />
-                <span className="text-primary">With AI-Powered Matching</span>
+                {/* <span className="text-primary">With AI-Powered Matching</span> */}
               </h1>
             </motion.div>
             

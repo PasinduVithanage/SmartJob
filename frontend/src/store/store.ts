@@ -18,6 +18,7 @@ export interface Job {
   experience: string;
   skills?: string[];
   joburl: string;
+  source: string;
 }
 
 export interface User {
@@ -225,6 +226,7 @@ export const useJobStore = create<JobState>()((set, get) => ({
         category: 'Not specified',
         experience: 'Not specified',
         skills: [],
+        source:job.payload.source
       }));
       
       set({ 
