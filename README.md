@@ -75,7 +75,7 @@ Scraped data is stored in the database used by the backend and made available th
 
 This ensures the platform always provides up-to-date job listings.
 
-📌 You can test or trigger the scraper manually by running the appropriate script inside the backend folder.
+📌 You can test or trigger the scraper manually by running the appropriate script inside the scrapers folder.
 
 ## Scrapers Setup
 1. Navigate to the scrapers folder:
@@ -99,8 +99,18 @@ This ensures the platform always provides up-to-date job listings.
 - Real-time job updates
 
 ## Contribution
-Feel free to open issues and submit pull requests to improve the platform!
+This project was developed by Nugaduwa Madhubhashitha as part of the final year research project for the BSc (Hons) in Computer Science degree program.
 
-## License
-This project is licensed under the MIT License.
+The goal of this project is to build a job platform that:
+
+Aggregates job listings from multiple sources via automated scrapers.
+
+Helps users easily browse, search, and apply for jobs in one place.
+
+Uses a modern full-stack architecture (React + Flask + Python).
+
+Leverages daily automation for real-time updates.
+
+🎓 Developed with passion and purpose as a capstone research project.
+
 
