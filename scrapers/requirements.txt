@@ -1,0 +1,9 @@
+# SmartJob Scrapers Requirements
+python-dotenv
+playwright
+beautifulsoup4
+qdrant-client
+sentence-transformers
+asyncio
+aiohttp
+logging
