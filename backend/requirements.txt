@@ -6,3 +6,4 @@ sentence-transformers
 werkzeug
 PyPDF2
 google-generativeai
+PyMuPDF
