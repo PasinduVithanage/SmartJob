@@ -1,4 +1,4 @@
-# Job Scraping Platform
+# SmartJob
 
 ## Overview
 This project is a job search platform that aggregates job vacancies from various sources like LinkedIn and Topjobs using web scrapers. It centralizes job listings, allowing users to browse opportunities, upload CVs, use advanced filters, and receive tailored recommendations.
