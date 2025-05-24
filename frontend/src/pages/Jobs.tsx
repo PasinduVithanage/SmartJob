@@ -154,7 +154,7 @@ export default function Jobs() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Available Jobs</p>
-                      <p className="font-medium">{filteredJobs.length}</p>
+                      {/* <p className="font-medium">{filteredJobs.length}</p> */}
                     </div>
                   </div>
                   

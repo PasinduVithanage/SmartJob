@@ -82,12 +82,19 @@ export default function CVUpload() {
               <p className="text-sm text-muted-foreground">Your CV is ready for job applications</p>
             </div>
           </div>
-          <button
-            onClick={() => uploadCV(null as any)} // This would clear the CV in a real app
-            className="text-sm text-muted-foreground hover:text-destructive transition-colors"
+          <label
+            htmlFor="cv-replace"
+            className="text-sm text-muted-foreground hover:text-destructive transition-colors cursor-pointer"
           >
             Replace
-          </button>
+          </label>
+          <input
+            id="cv-replace"
+            type="file"
+            accept=".pdf,.doc,.docx"
+            onChange={handleFileChange}
+            className="hidden"
+          />
         </div>
       </div>
     );

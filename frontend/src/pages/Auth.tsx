@@ -21,7 +21,7 @@ export default function Auth() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { login, signup, isAuthenticated } = useAuthStore();
 
-  // Get mode from URL
+  // Get mode and returnUrl from URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const modeParam = params.get('mode');
@@ -33,9 +33,11 @@ export default function Auth() {
   // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/dashboard');
+      const params = new URLSearchParams(location.search);
+      const returnUrl = params.get('returnUrl');
+      navigate(returnUrl || '/dashboard');
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate, location.search]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -83,12 +85,13 @@ export default function Auth() {
       } else {
         await signup(formData.name, formData.email, formData.password);
       }
-      navigate('/dashboard');
-    } catch (error) {
+      
+      // Navigation is handled by the useEffect above
+    } catch (error: any) {
       setErrors({
-        form: mode === 'login' 
+        form: error.message || (mode === 'login' 
           ? 'Invalid email or password' 
-          : 'Failed to create account'
+          : 'Failed to create account')
       });
     } finally {
       setIsSubmitting(false);

@@ -1,0 +1,8 @@
+flask
+flask-cors
+python-dotenv
+qdrant-client
+sentence-transformers
+werkzeug
+PyPDF2
+google-generativeai

@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { fetchJobsFromQdrant, searchJobsWithFilters } from '../services/jobService';
+import { loginUser, signupUser, logoutUser } from '../services/authService';
 
 // Types
 export interface Job {
@@ -17,6 +19,7 @@ export interface Job {
   experience: string;
   skills?: string[];
   joburl: string;
+  source: string;
 }
 
 export interface User {
@@ -79,120 +82,87 @@ export const useThemeStore = create<ThemeState>()(
   })
 );
 
-// Auth store
+// Auth store with persistence
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       user: null,
       isAuthenticated: false,
       login: async (email, password) => {
         try {
-          // This would be an API call to Flask in a real app
-          // const response = await fetch(`${API_URL}/auth/login`, {
-          //   method: 'POST',
-          //   headers: { 'Content-Type': 'application/json' },
-          //   body: JSON.stringify({ email, password }),
-          // });
-          // if (!response.ok) throw new Error('Login failed');
-          // const data = await response.json();
-          
-          // Mock response for demonstration
-          const mockUser: User = {
-            id: '1',
-            name: 'John Doe',
-            email: email,
-            isAdmin: email === 'admin@example.com',
-            savedJobs: [],
-            appliedJobs: [],
-          };
-          set({ user: mockUser, isAuthenticated: true });
+          const response = await loginUser({ email, password });
+          set({ user: response.user, isAuthenticated: true });
         } catch (error) {
           console.error('Login failed', error);
-          throw new Error('Login failed');
+          throw error;
         }
       },
       signup: async (name, email, password) => {
         try {
-          // This would be an API call to Flask in a real app
-          // const response = await fetch(`${API_URL}/auth/signup`, {
-          //   method: 'POST',
-          //   headers: { 'Content-Type': 'application/json' },
-          //   body: JSON.stringify({ name, email, password }),
-          // });
-          // if (!response.ok) throw new Error('Signup failed');
-          // const data = await response.json();
-          
-          // Mock response for demonstration
-          const mockUser: User = {
-            id: '1',
-            name: name,
-            email: email,
-            isAdmin: false,
-            savedJobs: [],
-            appliedJobs: [],
-          };
-          set({ user: mockUser, isAuthenticated: true });
+          const response = await signupUser({ name, email, password });
+          set({ user: response.user, isAuthenticated: true });
         } catch (error) {
           console.error('Signup failed', error);
-          throw new Error('Signup failed');
+          throw error;
         }
       },
       logout: () => {
+        logoutUser(); // Call the logout service
         set({ user: null, isAuthenticated: false });
       },
       saveJob: (jobId) => {
-        const { user } = get();
-        if (!user) return;
-        set({
-          user: {
-            ...user,
-            savedJobs: [...user.savedJobs, jobId],
-          },
+        set((state) => {
+          if (!state.user) return state;
+          return {
+            user: {
+              ...state.user,
+              savedJobs: [...state.user.savedJobs, jobId],
+            }
+          };
         });
       },
       unsaveJob: (jobId) => {
-        const { user } = get();
-        if (!user) return;
-        set({
-          user: {
-            ...user,
-            savedJobs: user.savedJobs.filter((id) => id !== jobId),
-          },
+        set((state) => {
+          if (!state.user) return state;
+          return {
+            user: {
+              ...state.user,
+              savedJobs: state.user.savedJobs.filter((id) => id !== jobId),
+            }
+          };
         });
       },
       applyToJob: (jobId) => {
-        const { user } = get();
-        if (!user) return;
-        if (user.appliedJobs.includes(jobId)) return;
-        set({
-          user: {
-            ...user,
-            appliedJobs: [...user.appliedJobs, jobId],
-          },
+        set((state) => {
+          if (!state.user || state.user.appliedJobs.includes(jobId)) return state;
+          return {
+            user: {
+              ...state.user,
+              appliedJobs: [...state.user.appliedJobs, jobId],
+            }
+          };
         });
       },
-      uploadCV: async (file) => {
-        const { user } = get();
-        if (!user) return;
-        
-        // This would upload to Flask in a real app
-        // const formData = new FormData();
-        // formData.append('cv', file);
-        // const response = await fetch(`${API_URL}/user/upload-cv`, {
-        //   method: 'POST',
-        //   body: formData,
-        // });
-        // if (!response.ok) throw new Error('CV upload failed');
-        // const data = await response.json();
-        
-        // Mock response for demonstration
-        const cvUrl = URL.createObjectURL(file);
-        set({
-          user: {
-            ...user,
-            cv: cvUrl,
-          },
-        });
+      uploadCV: async (file: File) => {
+        try {
+          const formData = new FormData();
+          formData.append('cv', file);
+          
+          const uploadResponse = await fetch('http://localhost:5000/api/upload-cv', {
+            method: 'POST',
+            body: formData,
+          });
+          
+          if (!uploadResponse.ok) throw new Error('Failed to upload CV');
+          
+          const { cvUrl } = await uploadResponse.json();
+          
+          set((state) => ({
+            user: state.user ? { ...state.user, cv: cvUrl } : null
+          }));
+        } catch (error) {
+          throw new Error('Failed to upload CV');
+        }
       },
     }),
     {
@@ -213,28 +183,25 @@ export const useJobStore = create<JobState>()((set, get) => ({
     try {
       set({ isLoading: true });
       
-      // Read the LinkedIn jobs data from the JSON file
-      const response = await fetch('/data/linkedin_jobs.json');
-      if (!response.ok) throw new Error('Failed to fetch jobs');
-      const data = await response.json();
+      const data = await fetchJobsFromQdrant();
       
-      // Transform LinkedIn data to match our Job interface
-      const transformedJobs: Job[] = data.jobs.map((job: any) => ({
-        id: job.listing_id.split(':').pop() || '',
-        title: job.title,
-        company: job.company,
-        location: job.location,
-        salary: 'Not disclosed', // LinkedIn data doesn't include salary
-        type: 'Full-time', // Default value as LinkedIn data doesn't specify
-        description: `Position at ${job.company}`,
-        requirements: [], // Can be populated if available in LinkedIn data
-        postedDate: job.posted_date,
-        joburl: job.job_url,
-        logo: 'https://placehold.co/100', // Default logo
-        category: 'Not specified', // Can be determined based on job title
+      // Transform Qdrant data to match our Job interface
+      const transformedJobs: Job[] = data.map((job: any) => ({
+        id: job.id.toString(),
+        title: job.payload.title,
+        company: job.payload.company,
+        location: job.payload.location,
+        salary: 'Not disclosed',
+        type: 'Full-time',
+        description: `Position at ${job.payload.company}`,
+        requirements: [],
+        postedDate: job.payload.posted_date,
+        joburl: job.payload.job_url,
+        logo: 'https://placehold.co/100',
+        category: 'Not specified',
         experience: 'Not specified',
-        skills: [], // Can be extracted from job title/description
-       
+        skills: [],
+        source:job.payload.source
       }));
       
       set({ 
@@ -312,20 +279,42 @@ export const useJobStore = create<JobState>()((set, get) => ({
     
     set({ filteredJobs });
   },
-  searchJobs: (query) => {
-    const { jobs } = get();
-    if (!query.trim()) {
-      set({ filteredJobs: jobs });
-      return;
+  searchJobs: async (query: string) => {
+    try {
+      set({ isLoading: true });
+      const filters = {
+        query,
+        location: undefined,
+        jobType: undefined,
+      };
+  
+      const data = await searchJobsWithFilters(filters);
+      
+      // Transform search results
+      const transformedJobs: Job[] = data.map((job: any) => ({
+        id: job.id.toString(),
+        title: job.payload.title,
+        company: job.payload.company,
+        location: job.payload.location,
+        salary: 'Not disclosed',
+        type: job.payload.type || 'Full-time',
+        description: job.payload.description || `Position at ${job.payload.company}`,
+        requirements: [],
+        postedDate: job.payload.posted_date,
+        joburl: job.payload.job_url,
+        logo: 'https://placehold.co/100',
+        category: 'Not specified',
+        experience: 'Not specified',
+        skills: job.payload.skills || [],
+      }));
+  
+      set({ 
+        filteredJobs: transformedJobs,
+        isLoading: false 
+      });
+    } catch (error) {
+      console.error('Search failed:', error);
+      set({ error: 'Search failed', isLoading: false });
     }
-    
-    const searchResults = jobs.filter(job => 
-      job.title.toLowerCase().includes(query.toLowerCase()) ||
-      job.company.toLowerCase().includes(query.toLowerCase()) ||
-      job.description.toLowerCase().includes(query.toLowerCase()) ||
-      job.skills?.some(skill => skill.toLowerCase().includes(query.toLowerCase()))
-    );
-    
-    set({ filteredJobs: searchResults });
-  }
+  },
 }));

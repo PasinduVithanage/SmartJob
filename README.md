@@ -6,9 +6,9 @@ This project is a job search platform that aggregates job vacancies from various
 ## Project Structure
 ```
 job-scraping-platform/
-│-- backend/          # FastAPI backend for data processing and API handling
+│-- backend/          # Flask backend for data processing and API handling
 │-- frontend/         # React + Tailwind CSS frontend for the user interface
-│-- scrapers/         # Crawl4AI and Scrapy-based web scrapers
+│-- scrapers/         # Playwright and Scrapy-based web scrapers
 │-- README.md        # Project documentation
 │-- requirements.txt  # Backend dependencies
 │-- package.json      # Frontend dependencies
@@ -16,7 +16,7 @@ job-scraping-platform/
 
 ## Technologies Used
 ### Backend
-- **FastAPI**: API development and data handling
+- **Flask**: API development and data handling
 - **Python**: Backend development
 - **Qdrant**: Vector database for job and CV data comparison
 
@@ -28,7 +28,7 @@ job-scraping-platform/
 
 ### Scrapers
 - **Scrapy**: Web scraping framework
-- **Crawl4AI**: AI-powered scraping
+- **Playwright**: Web scraping framework
 
 ## Setup Instructions
 ### Backend Setup
@@ -45,9 +45,9 @@ job-scraping-platform/
    ```sh
    pip install -r requirements.txt
    ```
-4. Run the FastAPI server:
+4. Run the Flask server:
    ```sh
-   uvicorn main:app --reload
+   python app.py
    ```
 
 ### Frontend Setup
@@ -64,7 +64,20 @@ job-scraping-platform/
    npm run dev
    ```
 
-### Scraper Setup
+This project includes automated web scrapers that are hosted and scheduled to run daily at midnight. These scrapers are responsible for collecting and updating job listings from external sources.
+
+✅ Key Points:
+Scrapers run automatically on the hosting server every night at 12:00 AM (midnight).
+
+The scraping task is handled using a scheduler (e.g., cron on Linux, Task Scheduler on Windows, or APScheduler in Python).
+
+Scraped data is stored in the database used by the backend and made available through the API.
+
+This ensures the platform always provides up-to-date job listings.
+
+📌 You can test or trigger the scraper manually by running the appropriate script inside the backend folder.
+
+## Scrapers Setup
 1. Navigate to the scrapers folder:
    ```sh
    cd scrapers
@@ -75,7 +88,7 @@ job-scraping-platform/
    ```
 3. Run the scrapers:
    ```sh
-   scrapy crawl job_spider
+   unified_scraper.py
    ```
 
 ## Features
