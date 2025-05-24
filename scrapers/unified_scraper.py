@@ -1,6 +1,10 @@
 import asyncio
 import sys
 import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'backend', '.env'))
 
 # Fix import paths
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -12,10 +16,34 @@ from scrapers.linkedin.linkscrape import scrape_linkedin_jobs
 from scrapers.topjobs.topjob import scrape_topjobs, TopJobsProcessor
 from scrapers.linkedin.job_processor import LinkedInJobProcessor
 from qdrant_client import QdrantClient
+from qdrant_client.http import models
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Get Qdrant configuration
+def get_qdrant_client():
+    qdrant_url = os.getenv("QDRANT_URL")
+    qdrant_api_key = os.getenv("QDRANT_API_KEY")
+    
+    if qdrant_url and qdrant_api_key:
+        # Use cloud Qdrant
+        try:
+            return QdrantClient(
+                url=qdrant_url,
+                api_key=qdrant_api_key,
+            )
+        except Exception as e:
+            logger.error(f"Failed to connect to cloud Qdrant: {str(e)}")
+    
+    # Fallback to local Qdrant
+    try:
+        return QdrantClient("localhost", port=6333)
+    except Exception as e:
+        logger.error(f"Failed to connect to local Qdrant: {str(e)}")
+        logger.warning("No Qdrant connection available. Some functionality will be limited.")
+        return None
 
 async def run_unified_scraper():
     try:
@@ -30,7 +58,7 @@ async def run_unified_scraper():
             linkedin_processor.remove_expired_jobs(days_threshold=30)
             
             # Remove duplicate jobs based on listing ID
-            client = QdrantClient("localhost", port=7000)
+            client = get_qdrant_client()
             seen_listings = set()
             to_delete = []
             offset = 0
@@ -106,7 +134,7 @@ async def run_unified_scraper():
 
 def get_all_jobs():
     try:
-        client = QdrantClient("localhost", port=6333)
+        client = get_qdrant_client()  # Updated to use cloud Qdrant
         
         # Get all jobs without any filters
         all_jobs = []

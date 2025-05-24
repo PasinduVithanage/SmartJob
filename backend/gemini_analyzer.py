@@ -16,6 +16,21 @@ api_key = os.getenv("GEMINI_API_KEY")
 if api_key:
     genai.configure(api_key=api_key)
 
+# Get Qdrant configuration
+def get_qdrant_client():
+    qdrant_url = os.getenv("QDRANT_URL")
+    qdrant_api_key = os.getenv("QDRANT_API_KEY")
+    
+    if qdrant_url and qdrant_api_key:
+        # Use cloud Qdrant
+        return QdrantClient(
+            url=qdrant_url,
+            api_key=qdrant_api_key,
+        )
+    else:
+        # Fallback to local Qdrant
+        return QdrantClient("localhost", port=6333)
+
 AVAILABLE_MODELS = [ "gemini-2.0-flash"]
 
 def analyze_cv(cv_json):
@@ -236,10 +251,10 @@ def parse_gemini_output(analysis_text):
             'score': 50
         }
 
-def find_matching_jobs(skills, categories, threshold=0.6):
-    """Find matching jobs based on skills, categories, and other criteria using traditional filtering."""
+# Add this function definition before the example usage at the bottom
+def find_matching_jobs(skills, categories, top_k=10):
     try:
-        client = QdrantClient("localhost", port=6333)
+        client = get_qdrant_client()
         
         # Create filter conditions
         filter_conditions = []
@@ -294,7 +309,7 @@ def find_matching_jobs(skills, categories, threshold=0.6):
         search_result = client.scroll(
             collection_name="jobs",
             scroll_filter=final_filter,
-            limit=10,
+            limit=top_k,
             with_payload=True
         )[0]  # [0] gets the points, [1] gets the next_page_offset
         
@@ -303,7 +318,7 @@ def find_matching_jobs(skills, categories, threshold=0.6):
             {
                 'id': result.id,
                 'payload': result.payload,
-                'score': 1.0  # Default score vector search
+                'score': 1.0  # Default score for non-vector search
             }
             for result in search_result
         ]
@@ -314,8 +329,7 @@ def find_matching_jobs(skills, categories, threshold=0.6):
         print(f"Job matching error: {str(e)}")
         return []
 
-# Example usage:
 skills = ["Python", "Machine Learning"]
 categories = ["Technology"]
-matching_jobs = find_matching_jobs(skills, categories, threshold=0.6)
+matching_jobs = find_matching_jobs(skills, categories)  # Remove threshold parameter
 print(matching_jobs)

@@ -1,16 +1,36 @@
-from playwright.async_api import async_playwright
+import asyncio
+import aiohttp
+import os
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from datetime import datetime
 from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
+from playwright.async_api import async_playwright
 import logging
+
+# Load environment variables
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'backend', '.env'))
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class TopJobsProcessor:
     def __init__(self):
-        self.qdrant = QdrantClient("localhost", port=7000)
+        # Get Qdrant configuration
+        qdrant_url = os.getenv("QDRANT_URL")
+        qdrant_api_key = os.getenv("QDRANT_API_KEY")
+        
+        if qdrant_url and qdrant_api_key:
+            # Use cloud Qdrant
+            self.qdrant = QdrantClient(
+                url=qdrant_url,
+                api_key=qdrant_api_key,
+            )
+        else:
+            # Fallback to local Qdrant
+            self.qdrant = QdrantClient("localhost", port=6333)
+            
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
 
     def _create_job_embedding(self, job):

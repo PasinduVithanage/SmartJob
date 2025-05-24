@@ -1,14 +1,34 @@
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
+import os
+from dotenv import load_dotenv
 import logging
+
+# Load environment variables
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Get Qdrant configuration
+def get_qdrant_client():
+    qdrant_url = os.getenv("QDRANT_URL")
+    qdrant_api_key = os.getenv("QDRANT_API_KEY")
+    
+    if qdrant_url and qdrant_api_key:
+        # Use cloud Qdrant
+        return QdrantClient(
+            url=qdrant_url,
+            api_key=qdrant_api_key,
+        )
+    else:
+        # Fallback to local Qdrant
+        return QdrantClient("localhost", port=6333)
+
 def init_database():
     try:
         # Connect to Qdrant
-        client = QdrantClient("localhost", port=6333)
+        client = get_qdrant_client()
         
         # Create jobs collection with updated vector size
         client.recreate_collection(

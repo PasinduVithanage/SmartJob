@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from qdrant_client import QdrantClient
 import os
@@ -14,6 +14,21 @@ CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 # Load environment variables
 load_dotenv()
+
+# Get Qdrant configuration
+def get_qdrant_client():
+    qdrant_url = os.getenv("QDRANT_URL")
+    qdrant_api_key = os.getenv("QDRANT_API_KEY")
+    
+    if qdrant_url and qdrant_api_key:
+        # Use cloud Qdrant
+        return QdrantClient(
+            url=qdrant_url,
+            api_key=qdrant_api_key,
+        )
+    else:
+        # Fallback to local Qdrant
+        return QdrantClient("localhost", port=6333)
 
 # Define upload configuration
 UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uploads'))
@@ -46,7 +61,7 @@ def allowed_file(filename):
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():
     try:
-        client = QdrantClient("localhost", port=6333)
+        client = get_qdrant_client()
         
         # Fetch all jobs from Qdrant
         points = client.scroll(
@@ -80,7 +95,7 @@ def search_jobs():
         per_page = search_data.get('per_page', 1000)
 
         # Connect to Qdrant
-        client = QdrantClient("localhost", port=6333)
+        client = get_qdrant_client()
         
         # Get all jobs first
         all_jobs = client.scroll(

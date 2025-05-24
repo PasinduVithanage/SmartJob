@@ -2,22 +2,60 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import hashlib
 import uuid
+import os
+from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from qdrant_client.http.exceptions import UnexpectedResponse
+
+# Load environment variables
+load_dotenv()
+
+# Get Qdrant configuration
+def get_qdrant_client():
+    qdrant_url = os.getenv("QDRANT_URL")
+    qdrant_api_key = os.getenv("QDRANT_API_KEY")
+    
+    if qdrant_url and qdrant_api_key:
+        # Use cloud Qdrant
+        return QdrantClient(
+            url=qdrant_url,
+            api_key=qdrant_api_key,
+        )
+    else:
+        # Fallback to local Qdrant
+        return QdrantClient("localhost", port=6333)
+
+# Initialize Qdrant client
+qdrant_client = get_qdrant_client()
 
 # Remove the Flask app creation from this file
 # app = Flask(__name__)
 # CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
-# Initialize Qdrant client
-qdrant_client = QdrantClient(host="localhost", port=6333)
+# REMOVE THIS LINE:
+# qdrant_client = QdrantClient(host="localhost", port=6333)
 
 # Create users collection if it doesn't exist
 try:
     # First try to get the collection to see if it exists
     qdrant_client.get_collection("users")
     print("Users collection already exists")
+    
+    # Add index for email field if it doesn't exist
+    try:
+        qdrant_client.create_payload_index(
+            collection_name="users",
+            field_name="email",
+            field_schema=models.PayloadSchemaType.KEYWORD
+        )
+        print("Created index for email field")
+    except Exception as e:
+        if "already exists" in str(e):
+            print("Email index already exists")
+        else:
+            print(f"Error creating email index: {str(e)}")
+            
 except Exception as e:
     # Only create if it doesn't exist
     try:
@@ -26,6 +64,14 @@ except Exception as e:
             vectors_config=models.VectorParams(size=1, distance=models.Distance.COSINE),
         )
         print("Created users collection")
+        
+        # Create index for email field
+        qdrant_client.create_payload_index(
+            collection_name="users",
+            field_name="email",
+            field_schema=models.PayloadSchemaType.KEYWORD
+        )
+        print("Created index for email field")
     except UnexpectedResponse as e:
         # If we get a 409 Conflict, the collection already exists
         if "already exists" in str(e):
