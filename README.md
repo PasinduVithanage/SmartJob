@@ -85,10 +85,11 @@ This ensures the platform always provides up-to-date job listings.
 2. Install dependencies:
    ```sh
    pip install -r requirements.txt
+   python -m playwright install
    ```
 3. Run the scrapers:
    ```sh
-   unified_scraper.py
+   python unified_scraper.py
    ```
 
 ## Features
